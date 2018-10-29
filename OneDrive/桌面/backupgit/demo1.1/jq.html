@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+</head>
+<style>
+	
+</style>
+<body style="background-color: rgba(0,0,0,1);color: white;">
+    <!-- <button>开始动画</button> -->
+
+<div class="anima" style="display: none;">
+	<h1>iPhone XR辉煌。各方面。</h1>
+</div>
+
+<div class="fouc" style="height: 100%;width: 100%;margin-top: 300px;overflow: hidden;">
+<div class="img" style="text-align: center;margin:0 auto;z-index: -1;">
+		<img src="img/xr.png" alt="iphone">
+</div>
+</div>
+	<div class="content" style="">
+		<div class="c1">
+	<h2 >七层色彩工艺。 后玻璃的美丽饰面采用
+	先进的工艺实现，可实现深色，丰富的色彩。</h2>
+</div>
+
+<div class="c2">
+	<h3>航空航天级铝带。 Apple特别设
+	计的合金经过精密加工，可以制作结构带，并经过阳极氧化处理，以补充背玻璃的颜色。</h3>
+</div>
+
+<div class="c3">
+	<h4>无线充电。 玻璃后盖
+	iPhone X R可以轻松无线充电。3</h4>
+</div>
+</div>
+
+<div class="main">
+<div class="content_m">
+	<div class="text">
+		<h5>
+突破相机系统。 世界上最受欢迎的相机正在定义一个新的摄影时代。创新的传感器与ISP和神经引擎协同工作，帮助您创建前所未有的照片。</h5>
+
+	<button class="button"><a href="https://www.apple.com/iphone-xr/cameras/">学习更多</a></button>
+
+	</div>
+<!-- text-end -->
+
+
+</div>
+<!-- content_m-end -->
+
+</div>
+<!-- main-end -->
+
+<div class="content_d">
+
+	<div class="top">
+
+		<div class="left"><a href="#">
+			
+			<img src="img/xr.png" alt="xr">
+<div class="text" style="position:absolute; z-index:2; left:40%; top:70%">屏幕信息</a>
+</div>
+		
+		</div>
+		<!-- end of left -->
+
+		<div class="middle"><a href="#">
+			<img src="img/xr.png" alt="xr">
+<div class="text" style="position:absolute; z-index:2; left:40%; top:70%">脸部识别</a></div>
+		</div>
+		<!-- end of middle -->
+
+		<div class="right"><a href="#">
+			<img src="img/A12.png" alt="xr">
+			<div class="text" style="position:absolute; z-index:2; left:40%; top:70%">A12仿生</a></div>
+		</div>
+		<!-- end of right -->
+
+	</div><!-- end of top -->
+
+<br clear="both">
+
+<div class="bottom">
+	<div class="left"><a href="#">
+			
+			<img src="img/x.png" alt="xr">
+<div class="text" style="position:absolute; z-index:2; left:40%; top:70%">摄像机组</a>
+</div>
+		
+		</div>
+		<!-- end of left -->
+
+		<div class="middle"><a href="#">
+			<img src="img/x.png" alt="xr">
+<div class="text" style="position:absolute; z-index:2; left:40%; top:70%">只在iPhone</a></div>
+		</div>
+		<!-- end of middle -->
+
+		<div class="right"><a href="#">
+			<img src="img/carema.png" alt="xr">
+			<div class="text" style="position:absolute; z-index:2; left:40%; top:70%">技术细节</a></div>
+		</div>
+		<!-- end of right -->
+
+		</div>
+		<!-- end of bottom -->
+</div>
+<!-- end of content_d -->
+
+<script>
+	$(document).ready(function(){
+		$(".anima").fadeIn(1000);
+		//使用时间差序功能实现，然后通过选择器进行hover事件判断
+		$("img").hover(function(){
+			$("h2").fadeIn(1000);
+			$("h3").fadeIn(2000);
+			$("h4").fadeIn(3000);
+		});
+
+		//使用队列功能实现动画
+
+	});
+
+</script>
+</body>
+</html>
