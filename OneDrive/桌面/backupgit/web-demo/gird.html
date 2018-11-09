@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>grid布局学习</title>	
+<style type="text/css">
+
+body{
+	width: 90%;
+	border: 1px solid black;
+	height: 800px;
+}
+.container{
+	display: grid;
+	/*grid-column: 25% 25%;*/
+	grid-template-columns: 40% 40%;
+	grid-template-rows: 40% 40%;
+	grid-gap: 20% 20%;
+	height: 100%;
+	/*除了这些，grid布局还有很多
+	网格线(Grid Lines)
+网格线组成了网格，他是网格的水平和垂直的分界线。一个网格线存在行或列的两侧。我们可以引用它的数目或者定义的网格线名称。
+网格轨道(Grid Track)
+网格轨道是就是相邻两条网格线之间的空间，就好比表格中行或列。所在在网格中其分为grid column和grid row。每个网格轨道可以设置一个大小，用来控制宽度或高度。
+网格单元格(Grid Cell)
+网格单元格是指四条网格线之间的空间。所以它是最小的单位，就像表格中的单元格。
+网格区域(Grid Area)
+网格区域是由任意四条网格线组成的空间，所以他可能包含一个或多个单元格。相当于表格中的合并单元格之后的区域。
+网格容器(Grid Containers)
+通过使用display属性给元素显式设置了属性值grid或inline-grid，此时这个元素将自动变成网格容器。这个类似于flexbox一样，将元素设置设置为display:flex，元素将自动变成弹性盒模型。
+
+由于网格容器不是块容器，所以有部分属性在网格布局中将会失效：
+
+多列布局模块中的所有column-*属性运用在网格容器上将失效
+float和clear使用在网格项目（网格单元格Grid Cell）上将失效
+vertical-align使用在网格单元格上将失效
+::first-line和::first-letter这样的伪元素不能应用在网格容器上
+网格单元格顺序(order)
+网格单元格顺序和Flexbox模块一样，通过order属性来对网格单父元格进行顺序重排。*/
+}
+.fool1{
+	width: 100%;
+	background-color: blue;
+}
+.fool2{
+	background-color: blue;
+}
+.fool3{
+	background-color: blue;
+}
+.fool4{
+	background: blue;
+}
+</style>
+
+</head>
+<body >
+ <div class="container">
+ 	<div class="fool1">1</div>
+ 	<div class="fool2">2</div>
+ 	<div class="fool3">3</div>
+ 	<div class="fool4">4</div>
+ </div>
+</body>
+</html>
