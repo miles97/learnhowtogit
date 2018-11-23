@@ -30,9 +30,6 @@
 ·vehicle_banner_img 控制图片显示，通过Margin属性为负正确缩放显示图片,引入图片url，确定实际宽度
 定位absolute;
 
-·
-
-
 
 # 具体的html实现（布局以及代码规范以及JS简单效果）
 # ·滚动浏览器实现导航栏show 然后fixed在浏览器窗口
@@ -51,19 +48,31 @@ $(function () {
 })
 </script>
 
-# ·ajax实现
+# ·ajax实现(一个简单手机验证码实例)
 <script>
 $.ajax({ 
-	url:'',
+	url:'http://web.qq.com/financeClueInfo/sendCode',
 	data:{
-
+		//这个是用来传数据给服务器完成响应的
+		cellphone:$("#phont").val()
+		//传手机num到后台
+	},
+	beforeSend:function(){
+		$("#loading").show();
 	},
 	type:"get",
 	success:function(data){
-		
+		if (data.success) {
+			showAlert("验证码发送成功")
+		}else{
+			showAlert(data.msg)
+		}
+		$("#loading").hide();
+
 	},
 	error:function(){
-		alert("网络异常或服务器已断开连接")
+		alert("网络异常或服务器已断开连接");
+		$("#loading").hide();
 	}
 })
 </script>
