@@ -90,7 +90,14 @@ svn commit
 
 ## 开发环境向
 phpstudy
-vhost
-前端工具随意
+switchhost
+webstorm
 
-## 
+## 系统方向的想法
+
+前端的技术栈 vue+ vue.router,vue cli构建项目
+
+后端直接用现成的node构建，展示数据用echarts
+
+数据库直接用mongodb
+
