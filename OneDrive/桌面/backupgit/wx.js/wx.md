@@ -132,3 +132,36 @@ wxml
 
 其实以上代码会发现一个问题，就是点击view.dealer-number的时候，继承不了bindtap点击事件，这是因为我们的JS代码中并没有指向父元素的view，
 只要改动一行代码即可，e.target.dataset.id中的target改为currentTarget,可以继承点击事件。
+
+## 关于监听不同选择从而实现不同标签切换，或者样式的问题
+
+其实也是关于e.currentTarget.dataset.id的问题，用wx:for-index给index赋值，然后自定义data-id="{{index}}",拿到传递的值，
+通过e.target取到，再通过不同的id[0,1,2,3,4]设置不同的样式或者规则。
+
+	if (e.target.dataset.id==0){
+	      this.setData({
+	       <!--  itemList: [true,true,true,true], -->
+	      });
+	    }else{
+	      this.setData({
+	        <!-- itemList: [true,,,], -->
+	      });
+	    }
+	  },
+  
+tabYieldChange: function (e) {
+let yieldRadioCheckVal = e.currentTarget.dataset.id + 1;
+this.setData({
+  yieldRadioCheckVal: yieldRadioCheckVal,
+})
+//进入全国看板
+if (yieldRadioCheckVal == 1){
+  wx.navigateTo({
+    url: '../national/national',
+  })
+}else{
+  wx.navigateTo({
+    url: '../auction_list/auction_list',
+  })
+}
+},
