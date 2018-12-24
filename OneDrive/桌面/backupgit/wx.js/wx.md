@@ -164,4 +164,58 @@ if (yieldRadioCheckVal == 1){
     url: '../auction_list/auction_list',
   })
 }
-},
+
+
+wxml代码
+
+     <!-- index-0--title -->
+  <block wx:for="{{reportList}}" wx:key="index" wx:for-index="index">
+ <view class="report-title-wrap color-white" data-id="{{index}}" bindtap="isShowItemt">
+    <view class="title">
+      <view class="common-title">
+        <view class="span color-bg-primary"></view>
+        <view class="title-wrap" wx:for="{{reportList}}" wx:for-item="reportList"
+        wx:for-index="idx" wx:if="{{idx==index}}" wx:key="index">
+        {{reportList.date}}
+        </view> 
+      </view>
+      <view class="dealer-number color-primary">
+        {{itemList[index] ? '收起' : '展开'}}
+      </view>
+    </view>
+  </view>
+
+
+## 微信小程序目录解析
+
+	|_images				//放你的图片的地方
+	|
+	|_pages					//页面pages
+	|
+	|_组件包					//引入完整组件包，如e-charts
+	|
+	|_utils  				//项目的公用组件目录，写本地数据，调用接口
+	|
+	|_app.js			    //项目的入口文件，获取登录信息，判断用户状态
+	|_app.wxml			    //项目的公用样式，直接用class封装，全局可用
+	|_app.json			    //项目的页面展示配置
+	|_project.config.json   //项目配置文件             
+
+
+## wx:for-index  以及wx:if的用法
+
+wx:for-index给以渲染元素的indx，在筛选一些数据的时候很好用。
+例如如果后台返回了十几个数据rank排名，需要筛选前五个（这边后台给的是按照排名降序的json，所以前端不需要添加其他规则）
+wx:for-index="index"  wx:if="{{index<=4}}",就可以展示前五个数据,如果需要添加其他规则，在表达式内添加即可。
+
+
+### {{index}}，和 wx:for-index="index","index"的问题。
+
+{{}}这个是微信小程序的表达式大家都知道，所以{{index}}肯定是一个含有至少一个的变量，所以在一些复杂情况下的运用就如此。
+e.g.
+当我们定义了wx:for-index="index"的时候，如果整个block或者view是一个循环的话，index就是一个变量，所以单独使用index是获取不到想要的值，
+故使用{{index}}来获取相应的值。具体列子如上data-id="{{index}}"，不重复说明。
+而"index"就是一个下标,用于划分区域。
+
+## this.data.
+
