@@ -6,30 +6,31 @@
 
 因为后台给的数据就是一个二维数组，like this.
 
- {
-    "data": [{
-            "date": "2018-11-29",
-            "auctionList": [{
-                "id": 1728,
-                "title": "2018-11-29 上海浦东中心"
-            }]
-        },
-        {
-            "date": "2018-11-28",
-            "auctionList": [{
-                "id": 1729,
-                "title": "2018-11-28 成都中心"
-            }, {
-                "id": 1731,
-                "title": "2018-11-28 武汉中心"
-            }]
-        }
-    ],
-    "success": true,
-    "msg": "200",
-    "extras": ""
-}
+	 {
+	    "data": [{
+	            "date": "2018-11-29",
+	            "auctionList": [{
+	                "id": 1728,
+	                "title": "2018-11-29 上海浦东中心"
+	            }]
+	        },
+	        {
+	            "date": "2018-11-28",
+	            "auctionList": [{
+	                "id": 1729,
+	                "title": "2018-11-28 成都中心"
+	            }, {
+	                "id": 1731,
+	                "title": "2018-11-28 武汉中心"
+	            }]
+	        }
+	    ],
+	    "success": true,
+	    "msg": "200",
+	    "extras": ""
+	}
 当然测试用例的时候是自己先定义一个数组（可以先定义为空，然后分离数据在其他页面），
+```
 data:reportList：[{
             "date": "2018-11-29",
             "auctionList": [{
@@ -48,9 +49,11 @@ data:reportList：[{
             }]
         }
     ]，
+```
 如果用wx:for遍历对象的话获取不到对象，如果用wx:for-item的话也不能得到
 
 所以解决方法就是用两层，先用
+```
 <view 	wx:key="index" 
 		wx:for="{{reportList}}" 
 		wx:for-item="reportList"
@@ -59,7 +62,7 @@ data:reportList：[{
 		wx:for-item="auctionList" 
 		wx:key="index"
 >{{auctionList.title}}
-
+```
 完成遍历
 
 如果是一维数组的话更加简单，直接一层就可以解决问题，加上wx:key的原因只是为了增加稳定性。
@@ -78,6 +81,7 @@ e.target.dataset.value 取到的值都是无效，最后看到data-value="{{city
 
 原本一列切换按钮如下。
 js代码
+```
 	//是否展开按钮。
 	  isShowItem: function (e) {
 	    this.data.item = !this.data.item;
@@ -105,10 +109,12 @@ wxml代码
 <!-- {这里是需要展开的内容} -->
    </view>
 </block>
+```
 这样显然是不可行的，切换item的时候会将所有的item属性变动.
 	主要思想是，在data中声明一个itemList:[],用数组的元素分别控制属性，然后用数组(wx:for)的index控制
 代码修改如下
 js
+```javascript
 isShowItemt: function (e) {
 var index = e.target.dataset.id;
 this.data.itemList[index]=!this.data.itemList[index];
@@ -116,6 +122,7 @@ this.setData({
   itemList: this.data.itemList,
 })
 },
+
 wxml
 <block wx:for="{{listName}}" wx:key="index" wx:for-index="index">
 	<view data-id="{{index}}" bindtap="isShowItemt"> 
@@ -129,7 +136,7 @@ wxml
    </view>
    </view>
 </block>
-
+```
 其实以上代码会发现一个问题，就是点击view.dealer-number的时候，继承不了bindtap点击事件，这是因为我们的JS代码中并没有指向父元素的view，
 只要改动一行代码即可，e.target.dataset.id中的target改为currentTarget,可以继承点击事件。
 
@@ -149,41 +156,41 @@ wxml
 	    }
 	  },
   
-tabYieldChange: function (e) {
-let yieldRadioCheckVal = e.currentTarget.dataset.id + 1;
-this.setData({
-  yieldRadioCheckVal: yieldRadioCheckVal,
-})
-//进入全国看板
-if (yieldRadioCheckVal == 1){
-  wx.navigateTo({
-    url: '../national/national',
-  })
-}else{
-  wx.navigateTo({
-    url: '../auction_list/auction_list',
-  })
-}
+	tabYieldChange: function (e) {
+	let yieldRadioCheckVal = e.currentTarget.dataset.id + 1;
+	this.setData({
+	  yieldRadioCheckVal: yieldRadioCheckVal,
+	})
+	//进入全国看板
+	if (yieldRadioCheckVal == 1){
+	  wx.navigateTo({
+	    url: '../national/national',
+	  })
+	}else{
+	  wx.navigateTo({
+	    url: '../auction_list/auction_list',
+	  })
+	}
 
 
 wxml代码
 
      <!-- index-0--title -->
-  <block wx:for="{{reportList}}" wx:key="index" wx:for-index="index">
- <view class="report-title-wrap color-white" data-id="{{index}}" bindtap="isShowItemt">
-    <view class="title">
-      <view class="common-title">
-        <view class="span color-bg-primary"></view>
-        <view class="title-wrap" wx:for="{{reportList}}" wx:for-item="reportList"
-        wx:for-index="idx" wx:if="{{idx==index}}" wx:key="index">
-        {{reportList.date}}
-        </view> 
-      </view>
-      <view class="dealer-number color-primary">
-        {{itemList[index] ? '收起' : '展开'}}
-      </view>
-    </view>
-  </view>
+	  <block wx:for="{{reportList}}" wx:key="index" wx:for-index="index">
+	 <view class="report-title-wrap color-white" data-id="{{index}}" bindtap="isShowItemt">
+	    <view class="title">
+	      <view class="common-title">
+	        <view class="span color-bg-primary"></view>
+	        <view class="title-wrap" wx:for="{{reportList}}" wx:for-item="reportList"
+	        wx:for-index="idx" wx:if="{{idx==index}}" wx:key="index">
+	        {{reportList.date}}
+	        </view> 
+	      </view>
+	      <view class="dealer-number color-primary">
+	        {{itemList[index] ? '收起' : '展开'}}
+	      </view>
+	    </view>
+	  </view>
 
 
 ## 微信小程序目录解析
@@ -196,9 +203,9 @@ wxml代码
 	|
 	|_utils  				//项目的公用组件目录，写本地数据，调用接口
 	|
-	|_app.js			    //项目的入口文件，获取登录信息，判断用户状态
+	|_app.js			    //项目的入口文件，获取登录信息，判断用户状态|注册一个小程序指定生命周期函数等|接受一个object函数参数
 	|_app.wxml			    //项目的公用样式，直接用class封装，全局可用
-	|_app.json			    //项目的页面展示配置
+	|_app.json			    //项目的页面展示配置,window和tabbar对象可以设置状态栏、导航条、标题、窗口背景色，后者可以设置tab的状态和样式
 	|_project.config.json   //项目配置文件             
 
 
