@@ -33,6 +33,7 @@
 
 # 具体的html实现（布局以及代码规范以及JS简单效果）
 # ·滚动浏览器实现导航栏show 然后fixed在浏览器窗口
+```javascript
  <script>
 $(function () {
     $(window).scroll(function () {
@@ -47,8 +48,9 @@ $(function () {
     })
 })
 </script>
-
+```
 # ·ajax实现(一个简单手机验证码实例)
+```javascript
 <script>
 $.ajax({ 
 	url:'http://web.qq.com/financeClueInfo/sendCode',
@@ -76,7 +78,7 @@ $.ajax({
 	}
 })
 </script>
-
+```
 
 
 
@@ -85,7 +87,6 @@ $.ajax({
 svn commit 
 	push 
 	update
-
 
 
 ## 开发环境向

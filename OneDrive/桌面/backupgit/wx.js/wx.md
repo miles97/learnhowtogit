@@ -144,7 +144,7 @@ wxml
 
 其实也是关于e.currentTarget.dataset.id的问题，用wx:for-index给index赋值，然后自定义data-id="{{index}}",拿到传递的值，
 通过e.target取到，再通过不同的id[0,1,2,3,4]设置不同的样式或者规则。
-
+```javascript
 	if (e.target.dataset.id==0){
 	      this.setData({
 	       <!--  itemList: [true,true,true,true], -->
@@ -171,7 +171,7 @@ wxml
 	    url: '../auction_list/auction_list',
 	  })
 	}
-
+```
 
 wxml代码
 
