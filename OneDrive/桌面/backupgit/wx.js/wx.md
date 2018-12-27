@@ -224,5 +224,77 @@ e.g.
 故使用{{index}}来获取相应的值。具体列子如上data-id="{{index}}"，不重复说明。
 而"index"就是一个下标,用于划分区域。
 
-## this.data.
+## 请求前后的状态处理  ________来自微信官方指南
 
+### 大部分场景可能是这样的，用户点击一个按钮，界面出现“加载中...”的Loading界面，然后发送一个请求到后台，后台返回成功直接进入下一个业务逻辑处理，后台返回失败或者网络异常等情况则显示一个“系统错误”的Toast，同时一开始的Loading界面会消失。我们给出一个常见的wx.request的示例代码，如下所示。
+
+```javascript
+var hasClick = false;
+
+Page({
+
+  tap: function() {
+
+    if (hasClick) {
+
+      return
+
+    }
+
+    hasClick = true
+
+    wx.showLoading()
+
+
+
+    wx.request({
+
+      url: 'https://test.com/getinfo',
+
+      method: 'POST',
+
+      header: { 'content-type':'application/json' },
+
+      data: { },
+
+      success: function (res) {
+
+        if (res.statusCode === 200) {
+
+          console.log(res.data)// 服务器回包内容
+
+        }
+
+      },
+
+      fail: function (res) {
+
+        wx.showToast({ title: '系统错误' })
+
+      },
+
+      complete: function (res) {
+
+        wx.hideLoading()
+
+        hasClick = false
+
+      }
+
+    })
+
+  }
+
+})
+```
+为了防止用户极快速度触发两次tap回调，我们还加了一个hasClick的“锁”，在开始请求前检查是否已经发起过请求，如果没有才发起这次请求，等到请求返回之后再把锁的状态恢复回去。
+
+## [排查异常的方法](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=0008aeea9a8978ab0086a685851c0a)
+在使用wx.request接口我们会经常遇到无法发起请求或者服务器无法收到请求的情况，我们罗列排查这个问题的一般方法：
+
+检查手机网络状态以及wifi连接点是否工作正常。
+检查小程序是否为开发版或者体验版，因为开发版和体验版的小程序不会校验域名。
+检查对应请求的HTTPS证书是否有效，同时TLS的版本必须支持1.2及以上版本，可以在开发者工具的console面板输入showRequestInfo()查看相关信息。
+域名不要使用IP地址或者localhost，并且不能带端口号，同时域名需要经过ICP备案。
+检查app.json配置的超时时间配置是否太短，超时时间太短会导致还没收到回报就触发fail回调。
+检查发出去的请求是否302到其他域名的接口，这种302的情况会被视为请求别的域名接口导致无法发起请求。
