@@ -1,0 +1,319 @@
+.cityhover{
+  color: #1591fa;
+  background: url(https://raw.githubusercontent.com/miles97/learnhowtogit/master/OneDrive/%E6%A1%8C%E9%9D%A2/backupgit/wx.js/on.png) no-repeat;
+  background-position: right;
+  background-size: 54rpx 39rpx;
+}
+
+/* pages/auction_list/auction_list.wxss */
+page{
+  background: #27273e;
+}
+.intro {
+  margin: 60rpx;
+  text-align: center;
+}
+.main{
+  position:relative;
+  height:100%;
+}
+.head-bar{
+  height: 100%;
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.date{
+  width: 49%;
+  float: left;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.date .down{
+  width:25rpx;
+  height:15rpx;
+  position:absolute;
+  top:35rpx;
+  right:18%;
+}
+.date .down-2{
+  width:25rpx;
+  height:15rpx;
+  position:absolute;
+  top:35rpx;
+  right:60%;
+}
+.date:hover{
+  border-bottom: 3rpx solid #1591fa;
+  color:#1591fa;
+}
+.national{
+  width: 49%;
+  float: left;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.national:hover{
+  border-bottom: 3rpx solid #1591fa;
+  color:#1591fa;
+}
+/* picker-view{
+  height: 200px;width:100%;position:absolute;top:55px;
+}
+picker-view-column{
+  margin-left:20%;
+  text-align:center;
+} */
+.time-wrap{
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.yield-rate-wrap{
+  padding-bottom:20rpx; 
+}
+.common-rate{
+  width: 20%;
+  height: 150rpx;
+  display: inline-block;
+  margin: 20rpx 0 0 75rpx;
+  text-align: center;
+  font-size: 18rpx;
+  border-radius: 50%;
+}
+.common-rate .top{
+  font-size: 36rpx;
+  padding-top: 16rpx;
+}
+.common-rate .top text{
+  font-size: 18rpx;
+}
+.common-rate .address{
+  font-size: 24rpx;
+  padding-top: 14rpx;
+}
+.active{
+  background-color: rgb(253, 129, 72);
+}
+.month-deal-wrap{
+  padding: 32rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+.common-title{
+  float: left;
+  line-height:16rpx;
+}
+
+.common-title .span{
+  width:10rpx;
+  height: 24rpx;
+  border-radius: 4rpx;
+  display: inline-block;
+  margin-right:20rpx;  
+  vertical-align: middle;
+}
+.title-wrap{
+  display: inline-block;
+  font-size: 30rpx;
+  vertical-align: middle;
+}
+.detail{
+  clear: both;
+}
+.detail-top{
+  padding: 40rpx 20rpx 0; 
+}
+.detail-bottom{
+  padding: 40rpx 20rpx 0; 
+}
+.common-detail{
+  display: inline-block;
+  font-size: 42rpx;
+  width: 25%;
+  text-align: center;
+}
+.common-detail .name{
+  font-size: 20rpx;
+}
+.common-detail text{
+  font-size: 18rpx;
+}
+.dealer-wrap{
+  padding: 32rpx 20rpx 0;
+  margin-bottom: 20rpx;
+}
+.dealer-number{
+  float: right;
+  font-size: 24rpx;
+}
+.dealer-number view{
+  display: inline-block;
+  font-size: 30rpx;
+  line-height:16rpx;
+}
+.dealer-number image{
+  width:20rpx;
+  height:18rpx;
+  vertical-align: middle;
+}
+.common-dealer-detail{
+  display: inline-block;
+  font-size: 42rpx;
+  width: 33%;
+  text-align: center;
+}
+.common-dealer-detail .name{
+  font-size: 20rpx;
+}
+.dealer-top{
+  padding: 30rpx 10rpx 0; 
+}
+.dealer-bottom{
+  margin: 30rpx 10rpx 0; 
+  height: 130rpx;
+  border-radius: 12rpx;
+}
+.online{
+  height: 100rpx;
+  width: 5%;
+  font-size: 24rpx;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  padding: 30rpx 10rpx 0;
+  border-radius: 12rpx 0 0 12rpx;
+}
+.dealer-bottom .common-detail{
+  padding-top: 18rpx;
+  width: 25%;
+}
+.common-title-wrap{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.common-title-wrap .common-title{
+  line-height:94rpx;
+}
+.report-title-wrap{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 20rpx;
+}
+.margin{
+  margin-bottom:20rpx;
+}
+.report-title-wrap .common-title{
+  line-height:94rpx;
+}
+.dealer-list{
+  margin: 0 20rpx 20rpx;
+}
+.tab{
+  height: 78rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 78rpx;
+}
+.tab-top{
+  display: inline-block;
+  width: 33%;
+}
+.tab-top:last-child{
+  border-right: 0;
+}
+.list-wrap{
+  padding: 16rpx 46rpx 0;
+}
+.unit{
+  text-align: right;
+  font-size: 20rpx;
+}
+.list{
+  padding: 0 10rpx 10rpx;
+}
+.list:last-child{
+  border-bottom:0;
+}
+.list view{
+  display: inline-block;
+  font-size: 24rpx;
+  margin: 0 5rpx;
+  padding: 15rpx 0; 
+}
+.list view:first-child{
+  padding: 5rpx 12rpx;
+  border-radius: 5rpx;
+}
+.list view:last-child{
+  float:right;
+  padding-top:16rpx;
+}
+.report-list{
+  /* padding:20rpx 0 30rpx; */
+  margin:0 50rpx;
+}
+.list-list {
+  width:100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  vertical-align: middle;
+  /* position: relative; */
+}
+.list-list:hover{
+  color: #1591fa;
+
+}
+.report-list view{
+  display: inline-block;
+  font-size: 26rpx;
+  margin-right: 10rpx; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.report-list image{
+  width:14rpx;
+  height:24rpx;
+   position: absolute; 
+  top: 40%;
+  right: 0;
+  vertical-align: middle;
+}
+.report-list:last-child{
+  border:0;
+}
+.citylist{
+  position:absolute;
+  top:80rpx;
+  width:100%;
+  height:100%;
+  font-size: 30rpx;
+}
+.city{
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  text-align: left;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.cityhover{
+  color: #1591fa;
+  background: url(https://raw.githubusercontent.com/miles97/learnhowtogit/master/OneDrive/%E6%A1%8C%E9%9D%A2/backupgit/wx.js/on.png) no-repeat;
+  background-position: right;
+  background-size: 54rpx 39rpx;
+}
+.mask{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  z-index:9999;
+  top:440rpx;
+  left:0;
+  opacity: 0.5;
+  overflow-y: hidden;
+}
