@@ -308,5 +308,42 @@ Page({
 绑定基本需要拿到data-id=""  和一个index  ;具体表达式如
 {{isActive? 'active' : '' }}，诸如此类
 
+	
+## picker-view
+
+###关于小程序的自定义组件picker-view
+
+首先样式的调整不过分说明，关于样式的问题  最核心的问题就是picker-view自带样式
+picker-column自带了两条渐变的样式，然后中间拦的样式的影响是受到mask-style以及
+indicator-style两者的影响，所以难以调试。
+
+此外，picker-view只能内联进行样式的渲染，初步判定可能是因为原生组件的渲染顺序不一致。
+
+然后mask的蒙版效果只作用于picker中栏以及两者以内，indicator只作用于中间，但是效果甚微。
+
+所以渐变色等等是不可行的方法，只能修改设计稿，用最简单的方式实现需求。
+
+``` javascropit
+    bindChange: function(e) {
+    const val = e.detail.value
+    this.setData({
+      year: this.data.years[val[0]],
+      month: this.data.months[val[1]],
+      day: this.data.days[val[2]],
+      hour:this.data.hours[val[3]],
+      min: this.data.mins[val[4]],
+      value:[val[0],val[1],val[2],val[3],val[4]]
+      //最后一行的value属性是为了设定同步选中的值，在pickerview中。如果缺少的话每次都需要重复选择视图
+    })
+	  <picker-view class="color-white color-bg-top" indicator-style="height: 50px;" style="height: 360rpx;width:100%;position:absolute;top:88rpx;z-index:9999;" value="{{value}}" bindchange="bindChange" mask-style="background:rgba(33,33,60,.1);" wx:if="{{picker}}"
+	  indicator-style="height:50px;">
+    <picker-view-column style="margin-left:20%;text-align:center;margin-top:5%;">
+      <view wx:for="{{years}}" style="line-height: 50px" wx:key="index">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column style="margin-right:20%;text-align:center;margin-top:5%;">
+      <view wx:for="{{months}}" style="line-height: 50px" wx:key="index">{{item}}</view>
+    </picker-view-column>
+    </picker-view>
+```
 
 
