@@ -422,3 +422,18 @@ methods: {
         }
     }
 ```
+### 处理数组的方法
+很多情况下都是通过数组来展示数据，控制选项等等，一定程度上的修改处理数组是很重要的内容。
+```javascript
+     var arr2 = [];
+     arr2 = itemtList.fill(false);
+     arr2.unshift(true);
+    if (e.target.dataset.id!=0){
+      this.setData({
+        itemList: itemList.fill(true),  //简单修改数组内容，直接定义set即可
+      });
+    }else{
+      this.setData({
+        itemList: arr2,  //复杂的修改数组数据，定义内容之后再引用
+      });
+```
