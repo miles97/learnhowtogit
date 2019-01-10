@@ -194,7 +194,7 @@ wxml代码
 
 
 ## 微信小程序目录解析
-
+		
 	|_images				//放你的图片的地方
 	|
 	|_pages					//页面pages
@@ -371,3 +371,54 @@ indicator-style两者的影响，所以难以调试。
 ```
 此外，vue的css还是支持本地资源的，小程序处于安全问题考量，还是拒绝了本地的图片资源渲染。
 实际上主要的不同之处还是子父组件传参的问题。因为小程序设计的时候还是部分参考了vue的设计理念，所以很多相近的设计理念，还是看vue的一些设计之处较好。
+
+
+# codereview经验总结
+
+## 业务不忙的时候，无从下手的时候，学不动或者不知道怎么学习的时候
+
+### 实际上的项目结构已经不用多说了，基本上的构建还是很好学习的，codereview直接本身从代码出发提出优化的逻辑。
+下拉刷新操作
+```
+	  onPullDownRefresh: function () {
+	    // 显示顶部刷新图标
+	    wx.showNavigationBarLoading();
+	    this.getBriefingInfo();//随便anyList get
+	    setTimeout(function () {
+	      // 隐藏导航栏加载框
+	      wx.hideNavigationBarLoading();
+	      // 停止下拉动作
+	      wx.stopPullDownRefresh();
+	    }, 2000)
+	  },
+```
+### 需要处理传递过来的时数据
+```
+ auctionService.getAuctionReportInfo(data).then(res => {
+  this.data.briefingInfo = res.data;
+  res.data.dealAmount = (res.data.dealAmount / 10000).toFixed(2);//需要处理数据的方式
+this.setData({
+	listName: res.data，
+	})
+}
+```
+
+### 频繁需要切换选项的时候
+
+小程序代码 ```
+  tabIsShow: function(e){
+    this.data.isShow = !this.data.isShow;
+    this.setData({
+      isShow: this.data.isShow,
+    })
+  },
+ ```
+Vue ```
+methods: {
+            toggleShow : function(){
+                this.ifShow = this.ifShow ? false : true;
+                this.isIf = this.isIf ? false : true;
+            }
+        }
+    }
+```
