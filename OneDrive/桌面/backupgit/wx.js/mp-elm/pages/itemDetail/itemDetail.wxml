@@ -1,0 +1,60 @@
+<!--pages/itemDetail/itemDetail.wxml-->
+<view class="main color-white">
+  <!-- 头部商家详情页 -->
+  <view class='detail-top'>
+    <!--image  -->
+    <text class='big-one'>{{itemDetail.shopname}}</text>
+    <text class='big-two'>{{itemDetail.intro}}</text>
+    <text class='big-two'>{{itemDetail.intro}}</text>
+  </view>
+
+  <!-- 商品/评价切换tap -->
+  <view class='change-show-type'>
+    <view bindtap='changeshowitem'></view>
+    <view bindtap='changeshowscore'></view>
+  </view>
+
+  <!-- item项目列表 -->
+  <view wx:if="{{show}}">
+    <view wx:for="{{what}}" wx:for-index="index" wx:key="index" class='wall-list' bingtap='chooseMenuList'>
+      <text>{{itemDetail.wall}}</text>
+      <text class='category_num'>{{categoryNum[index]}}</text>
+    </view>
+
+    <view wx:if="{{showMenu}}">
+      <view class='list-right' wx:for-index="index" wx:for="{{foods}}" wx:key="index"> 
+        <!-- <view class='img_place'>
+          <image></image>
+        </view> -->
+        <view class='food-intern'>
+          <text class='font-1'>{{foods.name}}</text>
+          <!-- <view wx:for="{{foods}}" wx:for-index="index" wx:key="index">
+          用来新品icon的绘图
+          </view> -->
+          <text class='description'>{{foods.description}}</text>
+        </view>
+      </view>
+
+    </view>
+
+    <!-- footer -->
+    <view class='footer-bottom'>
+      <view class='shoocart'>
+        <image></image>
+      </view>
+
+    </view>
+    <!-- contain内详情页 -->
+    <view>
+    </view>
+  </view>
+
+
+  <!-- score页面 -->
+  <view>
+
+  </view>
+
+
+
+</view>

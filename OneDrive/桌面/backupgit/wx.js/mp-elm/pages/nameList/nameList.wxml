@@ -1,0 +1,33 @@
+<!--pages/nameList/nameList.wxml-->
+<view class='main'>
+  <!-- 顶部导航栏 -->
+  <view class="color-bg-blue head-top">
+    <image src="../../images/search.png"></image>
+    <view class='center-name'>{{nameList.locationName}}</view>
+    <view>
+      <text bindtap='login'>login</text>||
+      <text bindtap="regst">regst</text>
+    </view>
+  </view>
+
+  <!-- 轮播头图 -->
+  <view class='majoy-head border-gray' wx:for="{{}}" wx:for-index="index" wx:key="index">
+    <view class="single-majoy" bindtap="gotoList">nameList.somethi
+
+    </view>
+  </view>
+
+  <!-- 附近商家列表 -->
+  <view class='shop-list' wx:for="{{namelist.What}}" wx:for-index="index" wx:key="index">
+    <view class='single-shop-item'>
+    {{nameList.that}}
+    </view>  
+  </view>
+
+
+
+
+
+
+
+</view>

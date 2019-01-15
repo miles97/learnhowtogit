@@ -1,0 +1,62 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.0",
+	"appid": "wxbed62bce276d362e",
+	"projectname": "mp-elm",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "nameList",
+					"pathName": "pages/nameList/nameList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "fillterList",
+					"pathName": "pages/fillterList/fillterList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "itemDetail",
+					"pathName": "pages/itemDetail/itemDetail"
+				}
+			]
+		}
+	}
+}

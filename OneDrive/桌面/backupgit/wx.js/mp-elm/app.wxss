@@ -1,0 +1,17 @@
+/**app.wxss**/
+
+.page {
+  background-color: #ccc;
+}
+
+.color-bg-blue {
+  background-color: #3190e8;
+}
+
+.color-blue {
+  color: #3190e8;
+}
+
+.border-white {
+  border: 1px solid #ccc;
+}

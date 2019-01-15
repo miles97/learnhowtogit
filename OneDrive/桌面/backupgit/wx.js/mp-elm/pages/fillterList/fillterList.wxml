@@ -1,0 +1,31 @@
+<!--pages/fillterList/fillterList.wxml-->
+<view class='main'>
+  <!-- 头部来源页面 -->
+  <view class='head-top'>
+    <text>{{namefrom}}</text>
+  </view>
+
+  <!-- 筛选选项 -->
+  <view class='fillter'>
+    <view class='choose'></view>
+    <view class='inline'></view>
+    <view class='listout'></view>
+  </view>
+
+   <!-- 渲染列表页面  -->
+
+    <!-- 这里的组件可以复用，
+    直接从nameList引入即可 -->
+
+
+
+</view>
+
+
+<!-- choose页面 -->
+<view></view>
+
+<!-- inline页面 -->
+
+<!-- listout页面 -->
+

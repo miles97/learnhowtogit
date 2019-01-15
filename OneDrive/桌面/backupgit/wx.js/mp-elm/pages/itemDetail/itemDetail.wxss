@@ -1,0 +1,4 @@
+/* pages/itemDetail/itemDetail.wxss */
+.detail-top{
+  height: 100%;
+}
