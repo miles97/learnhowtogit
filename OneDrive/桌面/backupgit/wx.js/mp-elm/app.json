@@ -4,7 +4,8 @@
     "pages/fillterList/fillterList",
     "pages/confirmOrder/confirmOrder",
     "pages/mine/mine",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/itemDetail/itemDetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

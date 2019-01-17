@@ -1,12 +1,9 @@
 /* pages/order/order.wxss */
-.profile_page{
-
-}
 .profile-number{
   padding-top:1.95em;
 }
 .profile-link{
-  display:block;
+  /* display:block; */
   display:flex;
   box-align: center;
   -webkit-box-align: center;
@@ -81,7 +78,4 @@ align-items: center; */
   padding:.433333em .266667em .433333em 0;
   display:flex;
   justify-content:space-between;
-}
-.myorder text{
-  
 }

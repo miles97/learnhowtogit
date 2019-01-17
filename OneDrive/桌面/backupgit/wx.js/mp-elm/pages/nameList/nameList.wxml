@@ -3,7 +3,9 @@
 
   <!-- 顶部导航栏 -->
   <view class="color-bg-blue head-top">
+    <view class='imgtab' bindtap='gotoSearch'>
     <image src="../../images/search.png"></image>
+    </view>
     <view class='center-name'>{{nameList.locationName}}</view>
     <view>
       <text bindtap='login'>登录 |</text>
@@ -12,17 +14,24 @@
   </view>
 
   <!-- 轮播头图 -->
-  <view class='majoy-head border-gray' wx:for="{{}}" wx:for-index="index" wx:key="index">
+  <view class='majoy-head border-gray'>
     <view class="single-majoy" bindtap="gotoList">
       
     </view>
   </view>
 
   <!-- 附近商家列表 -->
-  <view class='shop-list' wx:for="{{namelist.What}}" wx:for-index="index" wx:key="index">
-    <view class='single-shop-item'>
-    {{nameList.that}}
-    </view>  
+  <view class='shop-list'>
+    <view class='single-shop-item' wx:for="{{nameList.what}}" wx:for-index="index" wx:key="index" bindtap='gotoShop'>
+    <view class='imgCut'>
+    <image src='../../images/zhifubao.png'></image></view>
+    <view class='itself'>
+    <text class='font-2'> {{item.name}}</text>
+    <text class='font-4'>起送:￥{{item.start}}</text>
+    <text class='font-4'>配送:￥{{item.price}}</text>
+    </view>
+    </view>
+    <!-- <text>aaa</text> -->
   </view>
 
 

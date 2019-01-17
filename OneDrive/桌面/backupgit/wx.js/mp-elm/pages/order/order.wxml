@@ -7,7 +7,7 @@
       <view class='user-info'>
         <text class='font-2'>{{username}}</text>
         <view></view>
-        <text class='font-3'>绑定手机号:{{mobile}}</text>
+        <text class='font-3'>绑定手机号:{{mobile=="请绑定手机号"? "-": "mobile"}}</text>
       </view>
       <view class='arrow'>
         <!-- <image></image> -->
@@ -35,9 +35,9 @@
   </view><!-- end of s2 -->
   <view class='profile-1reTe'>
 
-    <view class='myorder'>
+    <view class='myorder' bindtap="gotoOrder">
       <!-- <view> <image></image> </view> -->
-      <view class='myorder-div' bingtap="gotoOrder">
+      <view class='myorder-div' >
         <text class='font-3'>我的订单</text>
         <!-- <view>images </view> -->
       </view>

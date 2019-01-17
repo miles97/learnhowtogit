@@ -15,7 +15,9 @@
 .border-white {
   border: 1px solid #ccc;
 }
-
+.border-gray  {
+  border: 1px solid #000;
+}
 .font-1{
   font-size: 2em;
 }

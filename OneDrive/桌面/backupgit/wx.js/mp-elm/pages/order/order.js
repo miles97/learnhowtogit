@@ -11,8 +11,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    username:"15104020102",
-    mobile:"15167271421",
+    username:"登录/注册",
+    mobile:"请绑定手机号",
     balance:"0.00",
     count:"3",
     pointNumber:"0",
