@@ -1,0 +1,87 @@
+/* pages/order/order.wxss */
+.profile_page{
+
+}
+.profile-number{
+  padding-top:1.95em;
+}
+.profile-link{
+  display:block;
+  display:flex;
+  box-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background:  #3190e8;
+  padding: .666667em .6em;
+  color: #fff;
+}
+.privateImage{
+  display:inline-block;
+  border-radius:50%;
+  vertical-align:middle;
+  height: 2.5em;
+  width: 2.5em;
+}
+.user-info{
+  margin-left:.48em;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.user-info text{
+  /* font-size: 1em; */
+}
+.info-data{
+  width:100%;
+  background: #fff;
+  box-sizing: border-box;
+}
+.info-data-link{
+  float:left;
+  width:33%;
+  display:inline-block;
+  border-right:1px solid #f1f1f1;
+  margin-top: 2%;
+}
+.info-data-link text{
+  display:block;
+  width:100%;
+  text-align:center;
+  font-weight:700;
+  line-height:1em;
+  font-size: 1em;
+  height: 2em;
+}
+.info-data-link:nth-of-type(1){
+  color:#f90;
+}
+.info-data-link:nth-of-type(2){
+  color:#ff5f3e;
+}
+.info-data-link:nth-of-type(3){
+  color:#6ac20b;
+}
+.profile-1reTe{
+margin-top:.4em;
+padding-left:1.6em;
+display:flex;
+align-items: center;
+}
+/* .aside{
+@include wh(.7rem,.7rem);
+margin-left:-.866667rem;
+margin-right:.266667rem;
+display:flex;
+align-items: center; */
+.myorder{
+  width:100%;
+  border-bottom:1px solid #f1f1f1;
+  border-top: 1px solid #f1f1f1;
+  padding:.433333em .266667em .433333em 0;
+  display:flex;
+  justify-content:space-between;
+}
+.myorder text{
+  
+}

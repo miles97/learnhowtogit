@@ -3,9 +3,9 @@
   <!-- 头部商家详情页 -->
   <view class='detail-top'>
     <!--image  -->
-    <text class='big-one'>{{itemDetail.shopname}}</text>
-    <text class='big-two'>{{itemDetail.intro}}</text>
-    <text class='big-two'>{{itemDetail.intro}}</text>
+    <text class='font-1'>{{itemDetail.shopname}}</text>
+    <text class='font-2'>{{itemDetail.intro}}</text>
+    <text class='font-2'>{{itemDetail.intro}}</text>
   </view>
 
   <!-- 商品/评价切换tap -->
@@ -14,15 +14,15 @@
     <view bindtap='changeshowscore'></view>
   </view>
 
-  <!-- item项目列表 -->
-  <view wx:if="{{show}}">
+  <!-- item项目列表，显示商家或者评价页面 -->
+  <view wx:if="{{itemChoose}}">
     <view wx:for="{{what}}" wx:for-index="index" wx:key="index" class='wall-list' bingtap='chooseMenuList'>
       <text>{{itemDetail.wall}}</text>
       <text class='category_num'>{{categoryNum[index]}}</text>
     </view>
 
     <view wx:if="{{showMenu}}">
-      <view class='list-right' wx:for-index="index" wx:for="{{foods}}" wx:key="index"> 
+      <view class='list-right' wx:for-index="index" wx:for="{{foods}}" wx:key="index">
         <!-- <view class='img_place'>
           <image></image>
         </view> -->
@@ -33,28 +33,66 @@
           </view> -->
           <text class='description'>{{foods.description}}</text>
         </view>
+        <view class='footer-count'>
+          <text>￥</text>
+          <text>{{foods.specfoods[0].price}}</text>
+
+        </view>
       </view>
 
     </view>
 
-    <!-- footer -->
-    <view class='footer-bottom'>
-      <view class='shoocart'>
+    <!-- footer，底栏结算区域 -->
+    <view class='footer-bottom' bingtap="gotoConfirm">
+      <!-- <view class='shopcart'>
         <image></image>
+      </view> -->
+    </view>
+
+    <!--toggle购物车显示 -->
+    <view wx:if="{{showCartList&&cartFoodList.length}}" class='cart_food_list'>
+      <text>购物车</text>
+      <view class='clear_cart'>清空</view>
+    </view>
+
+    <view class='cart_food_details'>
+      <view class='cart_food' wx:for="cartFoodList" wx:for-index="index" wx:key="index">
+        <view class='cart_list_num'>
+          <text class='ellipsis'>{{item.name}}</text>
+          <text class='ellipsis'>{{item.speace}}</text>
+        </view>
+
+        <view class='cart_list_price'>
+          <text>￥</text>
+          <text>{{item.price}}</text>
+        </view>
+
       </view>
-
     </view>
-    <!-- contain内详情页 -->
-    <view>
+
+
+  </view>
+  <!-- end of itemChoose -->
+
+
+  <!-- 评分score页面 -->
+  <view class='rating_container'>
+    <view class="rating_head">
+      <text>{{shopDetailData.rating}}</text>
+      <text>综合评价</text>
+      <text>高于周边商家{{damn}}%</text>
+    </view>
+    <view class='rating_header_right'>
+      <text>服务态度</text>
+      <view class='rating_num'>{{ratingScoresData.service_score.toFixed(1)}}</view>
+      <text>菜品评价</text>
+      <view class='rating_num'>{{ratingScoresData.food_score.toFixed(1)}}</view>
+      <text>送达时间</text>
+      <view class='rating_num'>{{ratingScoresData.order_lead_time}}分钟</view>
     </view>
   </view>
 
-
-  <!-- score页面 -->
-  <view>
-
-  </view>
-
-
+  <!-- mask 遮罩层 -->
+  <view class='mask' hidden="{{showCartList}}" bindtap="isCloseCart"></view>
 
 </view>

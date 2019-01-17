@@ -1,0 +1,72 @@
+<view class='main'>
+
+  <!-- 收货地址   -->
+
+  <view class='recive_address' bindtap='gotoAddress'>
+    <image></image>
+    <text class='font-3'> </text>
+
+  </view>
+  <!-- 送达时间 -->
+  <view class='arr_time'>
+    <text class='font-1'>送达时间</text>
+
+    <view class='arr_time'>
+      <text>{{orderlist.info}}</text>||
+      <text>预计{{orderlist.time}}</text>
+    </view>
+
+  </view>
+
+
+  <!-- 支付方式   -->
+  <view class='paychoise' bingtap="gotoPay">
+    <text class='list-left'> </text>
+  </view>
+
+  <!-- 红包 -->
+  <view class='redbouns' disabled>
+    <text class='list-left'>使用红包</text>
+  </view>
+  <!-- confirm order -->
+  <view class='confirm-list'>
+    <view class='food_item_style' wx:for="{{orderlist.list}}" wx:key="index">
+      <text>{{item.name}}</text>
+      <view class='num_price'>
+        <text>X{{item.quantity}}</text>
+        <text>￥{{item.price}}</text>
+      </view>
+    </view>
+
+  <!-- 餐盒费用 -->
+    <view class='box_item_style' wx:if="{{checkoutData.cart.extra}}">
+    <text>{{checkoutData.cart.extra[0].name}}</text> 
+      <view class='num_price'>
+      <text>￥{{checkoutData.cart.extra[0].price}}</text>
+      </view>
+    </view>
+<!-- 配送费用 -->
+	<view class='food_item_style'>
+		<text class='food_name ellipsis'>配送费</text>
+		<view class='num_price'>
+		<text>￥{{checkoutData.cart.deliver_amount || 0}}</text>
+		</view>
+	</view>
+  <!-- sum,待支付 -->
+    <view class='food_item_style total_price'>
+      <text class='food_name ellipsis'>
+      订单 ¥{{checkoutData.cart.total}}
+      </text>
+      <view class='num_price'>
+      <text>￥{{checkoutData.cart.total}}</text>
+      </view>
+    </view>
+
+</view>
+
+  <view class='confirm_order'>
+    <text class='font-2'>待支付 ¥{{checkoutData.cart.total}}</text>
+    <text class='font-2'>确认下单</text>
+  </view>
+
+</view>

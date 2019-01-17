@@ -2,12 +2,45 @@
   "pages":[
     "pages/nameList/nameList",
     "pages/fillterList/fillterList",
-    "pages/itemDetail/itemDetail"
+    "pages/confirmOrder/confirmOrder",
+    "pages/mine/mine",
+    "pages/order/order"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "饿了么",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "images/jifen.jpeg",
+        "iconPath": "images/jifen.jpeg",
+        "pagePath": "pages/nameList/nameList",
+        "text": "外卖"
+      },
+      {
+        "selectedIconPath": "images/jifen.jpeg",
+        "iconPath": "images/jifen.jpeg",
+        "pagePath": "pages/fillterList/fillterList",
+        "text": "搜索"
+      },
+      {
+        "selectedIconPath": "images/jifen.jpeg",
+        "iconPath": "images/jifen.jpeg",
+        "pagePath": "pages/mine/mine",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/jifen.jpeg",
+        "iconPath": "images/jifen.jpeg",
+        "pagePath": "pages/order/order",
+        "text": "我的"
+      }
+    ]
   }
 }

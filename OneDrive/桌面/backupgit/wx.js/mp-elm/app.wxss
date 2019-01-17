@@ -15,3 +15,23 @@
 .border-white {
   border: 1px solid #ccc;
 }
+
+.font-1{
+  font-size: 2em;
+}
+
+.font-2{
+  font-size: 1em;
+}
+
+.font-3{
+  font-size: 28rpx;
+}
+
+.font-4{
+  font-size: 20rpx;
+}
+
+text{
+  font-size: 22rpx;
+}

@@ -1,0 +1,5 @@
+<!--pages/mine/mine.wxml-->
+<view class='main'>
+  <image src='../../images/jifen.jpeg' class='imageD'></image>
+  <text class='font-2'>很抱歉，暂时还没有订单喔</text>
+</view>

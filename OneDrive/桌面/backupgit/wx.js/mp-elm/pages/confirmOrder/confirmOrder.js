@@ -1,19 +1,17 @@
-// pages/itemDetail/itemDetail.js
+// pages/confirmOrder/confirmOrder.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    
+
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    showMenu: false,
-    itemChoose: false,
-    showCartList: false,
+
   },
 
   /**

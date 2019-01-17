@@ -1,19 +1,20 @@
 <!--pages/nameList/nameList.wxml-->
 <view class='main'>
+
   <!-- 顶部导航栏 -->
   <view class="color-bg-blue head-top">
     <image src="../../images/search.png"></image>
     <view class='center-name'>{{nameList.locationName}}</view>
     <view>
-      <text bindtap='login'>login</text>||
-      <text bindtap="regst">regst</text>
+      <text bindtap='login'>登录 |</text>
+      <text bindtap="regst"> 注册</text>
     </view>
   </view>
 
   <!-- 轮播头图 -->
   <view class='majoy-head border-gray' wx:for="{{}}" wx:for-index="index" wx:key="index">
-    <view class="single-majoy" bindtap="gotoList">nameList.somethi
-
+    <view class="single-majoy" bindtap="gotoList">
+      
     </view>
   </view>
 
