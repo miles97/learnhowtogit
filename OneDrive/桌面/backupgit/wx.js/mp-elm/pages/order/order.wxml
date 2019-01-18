@@ -7,44 +7,63 @@
       <view class='user-info'>
         <text class='font-2'>{{username}}</text>
         <view></view>
-        <text class='font-3'>绑定手机号:{{mobile=="请绑定手机号"? "-": "mobile"}}</text>
+        <text class='font-3'>绑定手机号:{{mobile == "请绑定手机号" ? "-" : "mobile"}}</text>
       </view>
       <view class='arrow'>
         <!-- <image></image> -->
       </view>
     </view>
-  </view> <!-- end of s1 -->
+  </view>
+  <!-- end of s1 -->
 
   <!-- section two -->
   <view class='info-data'>
     <view class="clear">
       <view class='info-data-link' bindtap='gotobalance'>
-        <text>{{balance}}元</text>
-        <text>我的余额</text>
+        <text class='big'>{{balance}}元</text>
+        <text class='color-black'>我的余额</text>
       </view>
       <view class='info-data-link' bindtap='gotobenefit'>
-        <text>{{count}}个</text>
-        <text>我的优惠</text>
+        <text class='big'>{{count}}个</text>
+        <text class='color-black'>我的优惠</text>
       </view>
-        <view class='info-data-link' bindtap='gotopoints'>
-        <text>{{pointNumber}}分</text>
-        <text>我的积分</text>
+      <view class='info-data-link' bindtap='gotopoints'>
+        <text class='big'>{{pointNumber}}分</text>
+        <text class='color-black'>我的积分</text>
       </view>
     </view>
 
-  </view><!-- end of s2 -->
+  </view>
+  <!-- end of s2 -->
   <view class='profile-1reTe'>
 
-    <view class='myorder' bindtap="gotoOrder">
+    <view class='myorder' bindtap="gotodownload">
       <!-- <view> <image></image> </view> -->
-      <view class='myorder-div' >
-        <text class='font-3'>我的订单</text>
+      <view class='myorder-div'>
+        <text class='font-3'>下载app</text>
         <!-- <view>images </view> -->
       </view>
     </view>
-  
-
+    
+    <view class='myorder' bindtap='gotoservice'>
+      <view class='myorder border-top-gray'>
+        <text class='font-3'>服务中心</text>
+      </view>
+    </view>
   </view>
 
+  <view class='profile-1reTe'>
+    <view class='myorder' bindtap="gotoorder">
+      <view class='myorder-div'>
+        <text class='font-3'>我的订单</text>
+      </view>
+    </view>
+
+      <view class='myorder' bindtap="gotoVIP">
+      <view class='myorder border-top-gray'>
+        <text class='font-3'>饿了么大会员</text>
+      </view>
+    </view>
+  </view>
 
 </view>

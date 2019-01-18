@@ -36,8 +36,8 @@ Component({
    */
   methods: {
     gotoSearch:function(){
-      wx.navigateTo({
-        url: '../order/order',
+      wx.switchTab({
+        url: '../fillterList/fillterList',
       })
     },
     gotoShop:function(){

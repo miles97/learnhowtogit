@@ -5,7 +5,8 @@
     "pages/confirmOrder/confirmOrder",
     "pages/mine/mine",
     "pages/order/order",
-    "pages/itemDetail/itemDetail"
+    "pages/itemDetail/itemDetail",
+    "pages/download/download"
   ],
   "window":{
     "backgroundTextStyle":"light",

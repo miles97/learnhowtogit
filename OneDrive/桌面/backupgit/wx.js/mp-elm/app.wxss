@@ -12,11 +12,21 @@
   color: #3190e8;
 }
 
+.color-black{
+  color: #000;
+}
+
+.big{
+  font-weight: 700;
+}
 .border-white {
   border: 1px solid #ccc;
 }
 .border-gray  {
   border: 1px solid #000;
+}
+.border-top-gray{
+  border-top: 1px solid #f1f1f1;
 }
 .font-1{
   font-size: 2em;
