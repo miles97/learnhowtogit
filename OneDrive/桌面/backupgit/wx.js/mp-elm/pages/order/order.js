@@ -27,5 +27,10 @@ Component({
         url: '../download/download',
       })
     },
+    gotoorder:function(){
+      wx.switchTab({
+        url: '../mine/mine',
+      })
+    }
   }
 })

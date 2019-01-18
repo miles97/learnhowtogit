@@ -1,1 +1,43 @@
 /* pages/fillterList/fillterList.wxss */
+.search_page{
+  margin-bottom: 2rem;
+}
+.search_form{
+  background-color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+
+}
+.search_form input,button{
+  height: 1.5rem;
+}
+.search_input{
+  width: 500rpx;
+  flex-shrink: 4;
+  border: 0.025rem solid #e4e4e4;
+  font-size:0.65rem;
+  color: #333;
+  border-radius: 0.125rem;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 0 0.25rem;
+  display: inline-block;
+}
+.search_submit{
+  /* flex-grow: 1; */
+  width: 160rpx;
+  flex-shrink: 2;
+  flex-basis: auto;
+  border: 0.025rem solid #3190e8;
+  margin-left: .2rem;
+  font-size:0.65rem;
+  color: #fff;
+  border-radius: 0.125rem;
+  background-color: #3190e8;
+  font-weight: bold;
+  padding: 0 0.25rem;
+  display: inline-block;
+}

@@ -1,4 +1,7 @@
 /* pages/mine/mine.wxss */
+page{
+  
+}
 .main{
   padding: 0;
   margin: 0;
