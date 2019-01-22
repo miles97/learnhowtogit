@@ -12,6 +12,18 @@ page{
   color: #3190e8;
 }
 
+.color-red{
+  color:#ff5f3e;
+}
+
+.color-green{
+  color:#6ac20b;
+}
+
+.color-orange{
+  color: #f90;
+}
+
 .color-black{
   color: #000;
 }

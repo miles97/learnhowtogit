@@ -3,19 +3,24 @@
   <!-- 头部商家详情页 -->
   <view class='detail-top'>
     <!--image  -->
-    <text class='font-1'>{{itemDetail.shopname}}</text>
-    <text class='font-2'>{{itemDetail.intro}}</text>
-    <text class='font-2'>{{itemDetail.intro}}</text>
+    <image src="../../images/jifen.jpeg"></image>
+    <view class='font-first'><text class='font-2'>{{itemDetail.shopname}}</text></view>
+    <view class='font-second'>
+      <text class='font-3'>{{itemDetail.intro}}</text>
+      <view></view>
+      <text class='font-3'>{{itemDetail.exintro}}</text>
+    </view>
+
   </view>
 
   <!-- 商品/评价切换tap -->
-  <view class='change-show-type'>
-    <view bindtap='changeshowitem'></view>
-    <view bindtap='changeshowscore'></view>
+  <view class='change-show-type detail-second'>
+    <view bindtap='changeshowitem' class="away">商品</view>
+    <view bindtap='changeshowscore' class="away">评价</view>
   </view>
 
   <!-- item项目列表，显示商家或者评价页面 -->
-  <view wx:if="{{itemChoose}}">
+  <view wx:if="{{itemChoose}}" class='detail-thrid'>
     <view wx:for="{{what}}" wx:for-index="index" wx:key="index" class='wall-list' bingtap='chooseMenuList'>
       <text>{{itemDetail.wall}}</text>
       <text class='category_num'>{{categoryNum[index]}}</text>
@@ -76,19 +81,27 @@
 
 
   <!-- 评分score页面 -->
-  <view class='rating_container'>
+  <view class='rating_container' wx:if="{{showScore}}">
     <view class="rating_head">
-      <text>{{shopDetailData.rating}}</text>
-      <text>综合评价</text>
-      <text>高于周边商家{{damn}}%</text>
+      <text class='font-3'>综合评价:</text>
+      <text class='font-3 color-orange'>{{shopDetailData.rating}}</text>
+      <view></view>
+      <text class='font-3'>高于周边商家:</text>
+      <text class='font-3 color-orange'>{{shopDetailData.damn}}%</text>
     </view>
     <view class='rating_header_right'>
-      <text>服务态度</text>
-      <view class='rating_num'>{{ratingScoresData.service_score.toFixed(1)}}</view>
-      <text>菜品评价</text>
-      <view class='rating_num'>{{ratingScoresData.food_score.toFixed(1)}}</view>
-      <text>送达时间</text>
-      <view class='rating_num'>{{ratingScoresData.order_lead_time}}分钟</view>
+      <view class='right-block'>
+      <text>服务态度:</text>
+      <view class='rating_num color-orange'>{{ratingScoresData.service_score}}</view>
+      </view>
+       <view class='right-block'>
+      <text>菜品评价:</text>
+      <view class='rating_num color-orange'>{{ratingScoresData.food_score}}</view>
+      </view>
+       <view class='right-block'>
+      <text>送达时间:</text>
+      <view class='rating_num color-orange'>{{ratingScoresData.order_lead_time}}<text>分钟</text></view>
+   </view>
     </view>
   </view>
 
