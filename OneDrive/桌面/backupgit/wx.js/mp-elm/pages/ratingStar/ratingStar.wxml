@@ -1,0 +1,11 @@
+<view class="rating_container">
+  <view class='star_container'>
+    <image class='grey_fill'></image>
+     <!-- v-for="num in 5" :key="num" -->
+  </view>
+
+  <view class='star_container' style="width:{{width}} + rating*2/5 + 'rem'" class="star_overflow">
+      <image class='orange_fill'></image>
+     <!-- v-for="num in 5" :key="num" -->
+  </view>
+</view>

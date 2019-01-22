@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -78,7 +78,13 @@
 				{
 					"id": -1,
 					"name": "download",
-					"pathName": "pages/download/download"
+					"pathName": "pages/download/download",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/mapStatus/mapStatus"
 				}
 			]
 		}

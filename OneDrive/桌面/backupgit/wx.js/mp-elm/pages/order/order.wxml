@@ -3,9 +3,9 @@
   <!-- section one -->
   <view class='profile_number'>
     <view class='profile-link' bindtap='gotoinfo'>
-      <image src='../../images/jifen.jpeg' class='privateImage'></image>
+      <image src='{{userInfo.avatarUrl}}' class='privateImage'></image>
       <view class='user-info'>
-        <text class='font-2'>{{username}}</text>
+        <text class='font-2'>{{userInfo.nickName}}</text>
         <view></view>
         <text class='font-3'>绑定手机号:{{mobile == "请绑定手机号" ? "-" : "mobile"}}</text>
       </view>

@@ -6,7 +6,8 @@
     "pages/mine/mine",
     "pages/order/order",
     "pages/itemDetail/itemDetail",
-    "pages/download/download"
+    "pages/download/download",
+    "pages/mapStatus/mapStatus"
   ],
   "window":{
     "backgroundTextStyle":"light",

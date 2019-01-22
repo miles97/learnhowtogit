@@ -1,8 +1,10 @@
 // pages/order/order.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
    */
+
   properties: {
 
   },
@@ -16,6 +18,7 @@ Component({
     balance:"0.00",
     count:"3",
     pointNumber:"0",
+    userInfo:{},
   },
 
   /**
@@ -31,6 +34,17 @@ Component({
       wx.switchTab({
         url: '../mine/mine',
       })
-    }
+    },
+    onLoad: function () {
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    },
   }
 })

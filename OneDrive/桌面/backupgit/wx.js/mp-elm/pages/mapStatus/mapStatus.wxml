@@ -1,0 +1,19 @@
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <map 
+      id="myMap"
+      style="width: 100%; height: 300px;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      show-location
+    ></map>
+  </view>
+  <view class="btn-area">
+    <button bindtap="getCenterLocation" class="page-body-button color-bg-blue">获取位置</button>
+    <button bindtap="moveToLocation" class="page-body-button color-bg-blue">{{msiteTitle.name}}</button>
+    <button class='page-body-button color-bg-blue ' bindtap='getback'>确认定位</button>
+    <view></view>
+  </view>
+</view>

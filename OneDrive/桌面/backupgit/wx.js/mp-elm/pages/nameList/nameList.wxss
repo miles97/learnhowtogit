@@ -1,4 +1,9 @@
 /* pages/nameList/nameList.wxss */
+button{
+  background:#3190e8;
+  color:white;
+  line-height:50rpx;
+}
 
 .main {
   width: 100%;
@@ -24,9 +29,13 @@
   display: inline-block;
 }
 .center-name{
-  margin-left: 40%;
+  margin-left: 20%;
   margin-top: 30rpx;
   display: inline-block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 58%;
 }
 
 .head-top view:last-child {

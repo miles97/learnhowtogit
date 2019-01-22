@@ -6,17 +6,20 @@
     <view class='imgtab' bindtap='gotoSearch'>
     <image src="../../images/search.png"></image>
     </view>
-    <view class='center-name'>{{nameList.locationName}}</view>
+    <view class='center-name' bindtap='gotomap'>{{geoinfoList}}</view>
+    
     <view>
-      <text bindtap='login'>登录 |</text>
-      <text bindtap="regst"> 注册</text>
+      <button bindgetuserinfo='getUserInfo' open-type="getUserInfo" wx:if="{{!hasUserInfo}}">登录</button>
+      <text wx:else>欢迎,{{userInfo.nickName}}</text>
+      <!-- <text> | </text>
+      <text bindtap="regst">注册</text> -->
     </view>
   </view>
 
   <!-- 轮播头图 -->
   <view class='majoy-head border-gray'>
     <view class="single-majoy" bindtap="gotoList">
-      
+    <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
     </view>
   </view>
 
