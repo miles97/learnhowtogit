@@ -31,7 +31,7 @@ Component({
       }]
     },
     hasUserInfo: false,
-    geoinfoList:"请选择地区",
+    geoinfoList:"请选择地址",
   },
 
   /**
@@ -89,13 +89,16 @@ Component({
           }
         })
       }
-      let geoinfo = wx.getStorageSync("geoinfo");
-      this.data.geoinfoList = geoinfo.name;
+      // var geoinfoList = this.data.geoinfoList;
+      // let geoinfo = wx.getStorageSync("geoinfo");
+      // this.data.geoinfoList = geoinfo.name;
+      // console.log(geoinfo);
         this.setData({
-          geoinfoList:geoinfo.name,
+          // geoinfoList: geoinfo.name,
         })
     },
     onShow:function(){
+      // var geoinfoList = this.data.geoinfoList;
       let geoinfo = wx.getStorageSync("geoinfo");
       this.data.geoinfoList = geoinfo.name;
       this.setData({
