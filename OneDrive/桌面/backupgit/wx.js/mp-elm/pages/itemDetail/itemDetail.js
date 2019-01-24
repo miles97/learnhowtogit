@@ -15,7 +15,7 @@ Component({
   data: {
     menuIndex: 0,  //已选菜单索引值，默认为0
     itemChoose: true,
-    showCartList: false,
+    showCartList: true,
     showScore: false,
     shopDetailData:{
       "rating":5,
@@ -33,6 +33,17 @@ Component({
     },
     menuList:[],
     itemId:0,
+      damnList: [   //接口返回的数据过分复杂，先造点数据嘻嘻
+        {"num":0
+        },{
+            "num":0
+            },{
+                "num":0
+            }
+    ],  
+    add:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    num:null,
+    
   },
 
   /**
@@ -68,12 +79,47 @@ Component({
       // console.log(e);
     },
     gotofoodDetail:function(){
-      wx.showToast({
-        title: "还没做好呢，别催",
-        icon: 'none',
-        duration: 2000,
-      })
+    //   wx.showToast({
+    //     title: "还没做好呢，别催",
+    //     icon: 'none',
+    //     duration: 2000,
+    //   })
     },
+    //minus数量,正规军，问题是三维数组过分麻烦不好修改数据，所以暂且流氓
+      minusCount(e) {
+        const index = e.currentTarget.dataset.index;
+        let foodsList = this.data.foodsList;
+        let arr3 = [];
+        foodsList.forEach((item,index) => {
+            arr3.push(item.forEach((item,index) =>{
+                arr3.push(item.is_featured)
+            }))
+        })
+        let num = arr3[index];
+        num = num ++;
+        arr3[index] = num;
+        this.setData({
+            foodsList: foodsList,
+        });
+        // this.getTotalPrice();
+
+    },
+    // add数量
+      addCount(e) {
+        const index = e.currentTarget.dataset.index;
+        let add = this.data.add;
+        let num =add[index];
+        num = num+1;
+        add[index]=num
+       this.setData({
+           add:add,
+       })
+    },
+      gotopay(){
+          wx.navigateTo({
+              url: '../confirmOrder/confirmOrder',
+          })
+      },
     //初始化数据
     init: function () {
       this.getMenuList();
@@ -85,10 +131,16 @@ Component({
       }
       commonService.getMenuList(data).then(res => {
         this.data.menuList = res
-        this.setData({
-          menuList: res,
-        })
-        console.log(res);
+        // foodsList = this.data.foodsList
+        let arr1= []
+          res.forEach((item, index) => {
+              arr1.push(item.foods)
+          })
+          this.setData({
+              menuList: res,
+              foodsList:arr1,
+          })
+          console.log(arr1);
       })
     },
     onLoad:function(){

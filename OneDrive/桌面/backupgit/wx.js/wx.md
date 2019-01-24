@@ -144,6 +144,15 @@ wxml
 
 其实也是关于e.currentTarget.dataset.id的问题，用wx:for-index给index赋值，然后自定义data-id="{{index}}",拿到传递的值，
 通过e.target取到，再通过不同的id[0,1,2,3,4]设置不同的样式或者规则。
+
+##  ！重要
+## 动态绑定样式
+
+### 剩下的问题就是当我们需要动态绑定一个动作的时候，比如切换内容出现不同for渲染的列表，wx:if={{index==??}}
+？？本身就是动态绑定的一个变量，通过自定义data-id=""拿到元素之后，在绑定的动作里面setData他的数值。完成。
+
+## 需要的注意的问题是，自定义的data-id和wx:for渲染出来的index需要不在同一个vieW内，否则影响e的取值。
+适用于的场景是切换wx:for渲染出来的tab，根据for-index和自定义的data-id="{{index}}"数值数值相同来激活active的样式。
 ```javascript
 	if (e.target.dataset.id==0){
 	      this.setData({

@@ -1,4 +1,6 @@
 <!--pages/itemDetail/itemDetail.wxml-->
+<wxs module="arrSum" src="../../utils/util.wxs"></wxs>
+
 <view class="main color-white">
   <!-- 头部商家详情页 -->
   <view class='detail-top'>
@@ -23,16 +25,16 @@
 
   <!-- item项目列表，显示商家页面 -->
   <view wx:if="{{itemChoose}}" class='detail-thrid'>
-    <view class='menu_left'>
-      <view wx:for="{{menuList}}" wx:for-index="index" wx:key="index" 
-      class="{{menuIndex == index ? 'menu_left_li left_active':'menu_left_li'}}" 
-      wx:if="{{index<=10}}">
-        <view data-id="{{index}}" bindtap="chooseMenu">
-          <text>{{item.name}}</text>
-          <text class='category_num'>{{categoryNum[index]}}</text>
+        <view class='menu_left'>
+        <view wx:for="{{menuList}}" wx:for-index="index" wx:key="index" 
+        class="{{menuIndex == index ? 'menu_left_li left_active':'menu_left_li'}}" 
+        wx:if="{{index<=10}}">
+            <view data-id="{{index}}" bindtap="chooseMenu">
+            <text>{{item.name}}</text>
+            <text class='category_num'>{{categoryNum[index]}}</text>
+            </view>
         </view>
-      </view>
-    </view>
+        </view>
     <!-- 右边部分 -->
     <view class='menu_right'>
       <!-- <view class='menu_detail_header'>
@@ -43,7 +45,7 @@
       wx:for-index="idx" wx:if="{{idx==itemId}}">
         <!-- <text>{{index+1}}、{{item.name}}</text> -->
         <view class='menu_detail_list' wx:for="{{menuList.foods}}" wx:key="idx"
-        wx:for-item="foods">
+        wx:for-item="foods" data-index="{{index}}">
           <view class='menu_food_description' bindtap='gotofoodDetail'>
             <view class='font-2'>{{foods.name}}</view>
             <view class='food_description_content'>{{foods.description}}</view>
@@ -56,7 +58,13 @@
                 <text>￥</text>
                 <text>{{foods.specfoods[0].price}}</text>
                 <text v-if="foods.specifications.length">起</text>
+
               </view>
+            </view>
+            <view style='float:right;' >
+                <text bindtap="minusCount" data-index="{{index}}" class='font-1'>- </text>
+                <text class='font-1'>{{add[index]}}</text>
+                <text bindtap="addCount" data-index="{{index}}" class='font-1'> +</text>
             </view>
           </view>
         </view>
@@ -73,27 +81,47 @@
     </view>
 
     <!--toggle购物车显示 -->
-    <view wx:if="{{showCartList&&cartFoodList.length}}" class='cart_food_list'>
-      <text>购物车</text>
-      <view class='clear_cart'>清空</view>
-    </view>
-
-    <view class='cart_food_details'>
-      <view class='cart_food' wx:for="cartFoodList" wx:for-index="index" wx:key="index">
-        <view class='cart_list_num'>
-          <text class='ellipsis'>{{item.name}}</text>
-          <text class='ellipsis'>{{item.speace}}</text>
+    <view class='buy_cart_container'>
+        <view class='cart_icon_num' bindtap='toggleCartList'>
+            <view class='cart_icon_container'>
+                <text wx:if="totalNum" class="cart_list_length">{{totalNum}}</text>
+                    <!-- here is icon -->
+            </view>
+            <view class='cart_num'> 
+                <view>¥ {{totalPrice}}</view>
+                <view>配送费¥{{deliveryFee}}</view>
+            </view>  
         </view>
+            <view bindtap='gotopay' class="{{minimumOrderAmount<=0? 'gotopay_acitvity':'gotopay_acitvity'}} color-bg-greed">
+                <text class='gotopay_button_style' wx:if="{{minimumOrderAmount>0}}">还差¥{{minimumOrderAmount}}起送</text>
+                <text class='font-2 gotopay_button_style' wx:else>数量{{arrSum.add_arr_sum(add)}}</text>
+                <view></view>
+                <text class='font-2 gotopay_button_style'>总价{{arrSum.add_arr_sum(add)*20}}</text>
+            </view>
+      
+        <view class='cart_food_list' wx:if="{{showCartList&&cartFoodList.length}}">
+            <!-- header  -->
+            <text class='font-3'>购物车</text>
+            <view class='clear_cart' bindtap='clearCart'><text class='font-3'>清空</text></view>
+            <!-- end of header  -->
+            <view class='cart_food_details' id="cartFood">
+            <view class='cart_food_li' wx:for="cartFoodList" wx:for-index="index" wx:key="index">
+                <view class='cart_list_num'>
+                    <text class='ellipsis font-4'>{{item.name}}</text>
+                    <text class='ellipsis font-4'>{{item.speace}}</text>
+                </view>
+                 <view class='cart_list_price'>
+                    <text>￥</text>
+                    <text>{{item.price}}</text>
+                </view>
+                <!-- begin of section cart_list_control -->
 
-        <view class='cart_list_price'>
-          <!-- <text>￥</text> -->
-          <text>{{item.price}}</text>
         </view>
 
       </view>
     </view>
 
-
+    </view><!-- end of buy_cart_container -->
   </view>
   <!-- end of itemChoose -->
 

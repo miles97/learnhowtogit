@@ -8,6 +8,9 @@ page{
   background-color: #3190e8;
 }
 
+.color-bg-greed{
+    background-color: #91d14cfd;
+}
 .color-blue {
   color: #3190e8;
 }
