@@ -40,14 +40,15 @@
     <view class='myorder' bindtap="gotodownload">
       <!-- <view> <image></image> </view> -->
       <view class='myorder-div'>
-        <text class='font-3'>下载app</text>
-        <!-- <view>images </view> -->
+        <text class='font-3'>download</text>
+        <image src='../../images/right.svg'></image>
       </view>
     </view>
     
     <view class='myorder' bindtap='gotoservice'>
       <view class='myorder border-top-gray'>
-        <text class='font-3'>服务中心</text>
+        <text class='font-3'>help</text>
+        <image src='../../images/right.svg'></image>
       </view>
     </view>
   </view>
@@ -55,13 +56,15 @@
   <view class='profile-1reTe'>
     <view class='myorder' bindtap="gotoorder">
       <view class='myorder-div'>
-        <text class='font-3'>我的订单</text>
+        <text class='font-3'>data</text>
+        <image src='../../images/right.svg'></image>
       </view>
     </view>
 
       <view class='myorder' bindtap="gotoVIP">
       <view class='myorder border-top-gray'>
-        <text class='font-3'>饿了么大会员</text>
+        <text class='font-3'>others</text>
+        <image src='../../images/right.svg'></image>
       </view>
     </view>
   </view>

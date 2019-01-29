@@ -32,18 +32,17 @@ page{
   margin-top: 1%;
 }
 .away{
-    display:inline-block;
-    text-align:center;
-    width:49%;
-    margin-top:1%;
-    margin-left:1%;
-    height:40px;
-
+display:inline-block;
+text-align:center;
+width:49%;
+margin-top:1%;
+margin-left:1%;
+height:40px;
 }
 .active{
-  background-color: #fff;
-  color: #161616;
-  font-weight: 700;
+background-color: #fff;
+color: #161616;
+font-weight: 700;
 }
 
 .rating_container{
@@ -93,7 +92,7 @@ page{
   color:#666;
   font-size:.6rem;
 }
-  
+
 /* .category_num{
   position: absolute;
   top: .1rem;

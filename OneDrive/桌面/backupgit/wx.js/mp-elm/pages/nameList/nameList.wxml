@@ -4,7 +4,7 @@
   <!-- 顶部导航栏 -->
   <view class="color-bg-blue head-top">
     <view class='imgtab' bindtap='gotoSearch'>
-    <image src="../../images/search.png"></image>
+    <image src="../../images/search.svg"></image>
     </view>
     <view class='center-name' bindtap='gotomap'>{{geoinfoList}}</view>
     
@@ -24,7 +24,7 @@
   </view>
 
   <!-- 附近商家列表 -->
-  <view class='shop-list'>
+  <view class='shop-list' wx:if="{{}}">
     <view class='single-shop-item' wx:for="{{nameList.what}}" wx:for-index="index" wx:key="index" bindtap='gotoShop'>
     <view class='imgCut'>
     <image src='../../images/zhifubao.png'></image></view>

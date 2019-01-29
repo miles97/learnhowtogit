@@ -7,40 +7,43 @@
     "pages/order/order",
     "pages/itemDetail/itemDetail",
     "pages/download/download",
-    "pages/mapStatus/mapStatus"
+    "pages/mapStatus/mapStatus",
+    "pages/help/help",
+    "pages/consume/consume"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "饿了么",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "吃了么",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#a9b7b7",
-    "selectedColor": "#11cd6e",
+    "selectedColor": "#000",
     "borderStyle": "black",
     "list": [
       {
-        "selectedIconPath": "images/jifen.jpeg",
-        "iconPath": "images/jifen.jpeg",
+        "selectedIconPath": "images/eat2.png",
+        "iconPath": "images/eat.png",
         "pagePath": "pages/nameList/nameList",
         "text": "外卖"
       },
       {
-        "selectedIconPath": "images/jifen.jpeg",
-        "iconPath": "images/jifen.jpeg",
+        "selectedIconPath": "images/monitor2.png",
+        "iconPath": "images/monitor.png",
         "pagePath": "pages/fillterList/fillterList",
         "text": "搜索"
       },
       {
-        "selectedIconPath": "images/jifen.jpeg",
-        "iconPath": "images/jifen.jpeg",
+        "selectedIconPath": "images/line_chart2.png",
+        "iconPath": "images/line_chart.png",
         "pagePath": "pages/mine/mine",
-        "text": "订单"
+        "text": "报表"
       },
       {
-        "selectedIconPath": "images/jifen.jpeg",
-        "iconPath": "images/jifen.jpeg",
+        "selectedIconPath": "images/user2.png",
+        "iconPath": "images/user.png",
         "pagePath": "pages/order/order",
         "text": "我的"
       }

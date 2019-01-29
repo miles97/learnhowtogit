@@ -18,6 +18,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+      download:function(){
+              wx.showToast({
+                title: "还没做完 ^_^",
+                icon: 'yes',
+                duration: 2000,
+              })
+      }
   }
 })

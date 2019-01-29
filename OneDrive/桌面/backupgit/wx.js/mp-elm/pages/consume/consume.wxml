@@ -1,0 +1,46 @@
+<!--pages/consume/consume.wxml-->
+
+<view wx:if="{{showList}}">
+  <!-- <view wx:for="{{foodList}}" wx:for-index="index" wx:key="index">
+  {{item}}</view> 如果不能直接访问，用wx:for渲染-->
+  <view class='color-white'>
+    <view class='headinfo'>本周膳食详细报表</view>
+    <view class='right-block'>
+        <text>vt摄入量:</text>
+        <view class='rating_num color-orange'>{{foodList.vt}}mg
+        </view>
+    </view>
+    <view class='right-block'>
+        <text>carbo摄入量：</text>
+        <view class='rating_num color-orange'>{{foodList.carbohydrate}}g
+
+        </view>
+    </view>
+    <view class='right-block'>
+        <text>prot摄入量:</text>
+        <view class='rating_num color-orange'>{{foodList.protein}}g
+        </view>
+    </view>
+    <view class='right-block-two'>
+        <text>能量</text>
+        <view class='rating_num color-orange'>{{foodList.energy}}Kj
+        </view>
+    </view>
+    <view class='right-block-two'>
+        <text>脂肪</text>
+        <view class='rating_num color-orange'>{{foodList.fat}}mg
+        </view>
+    </view>
+
+  </view>
+
+</view>
+<view class="container color-bg-white">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view> 
+  <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}" bind:init="echartInit"></ec-canvas>
+  <view>
+</view>
+<view class='error-msg' wx:if="{{isHaveWeekOrderList}}">
+    <text class='font-3 '>阿欧，还没有本周数据喔。</text>
+</view>

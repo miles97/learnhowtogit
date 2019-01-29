@@ -23,7 +23,7 @@ text{
     margin-bottom: 1rem;
 }
 .determine{
-  background-color: #4cd964;
+  background-color: #3190e8;
   /* @include sc(.7rem, #fff); */
   size: .7rem;
   color: #fff;

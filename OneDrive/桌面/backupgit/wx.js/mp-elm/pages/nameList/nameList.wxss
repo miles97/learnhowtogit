@@ -17,11 +17,12 @@ button{
   position: relative;
 }
 .head-top image{
-  width: 45rpx;
-  height: 45rpx;
-  position: absolute;
-  left: 30rpx;
-  top: 30rpx;
+    width:60rpx;
+    height:60rpx;
+    position:absolute;
+    left:36rpx;
+    top:27rpx;
+
 }
 .imgtab{
   width: 45rpx;

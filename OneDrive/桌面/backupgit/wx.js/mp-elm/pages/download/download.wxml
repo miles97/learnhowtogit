@@ -2,7 +2,6 @@
   <view class="download_textage">
         <view head-title="下载" go-back='true'></view>
         <view class="dowload_container">
-            <image src='../../images/elmlogo.jpeg' class="logo_image"></image>
             <text>下载软件</text>
             <view class="determine" bindtap="download">下载</view>
         </view>

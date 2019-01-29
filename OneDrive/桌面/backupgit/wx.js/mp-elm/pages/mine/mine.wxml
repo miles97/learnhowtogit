@@ -1,5 +1,80 @@
-<!--pages/mine/mine.wxml-->
-<view class='main'>
-  <image src='../../images/jifen.jpeg' class='imageD'></image>
-  <text class='font-3'>很抱歉，暂时还没有订单喔</text>
+<view class='main' wx:if="{{!isHaveOrderList}}">
+    <!-- 订单内容 -->
+    <view class='head_top'>
+        <!-- <view wx:for="{{}}"></view> 
+        这里用getStorage拿到下单的内容，然后展示在头部,具体写法参照nameList 
+        -->
+    </view>
+
+    <!-- 营养价值列表 -->
+    <view class='nutrition_contain'>
+        <view>
+            <text class='font-3'>Today's Nutrition </text>
+        </view>
+        <view>
+            <text>营养素参考值(NRV):</text> </view>
+        <!-- 以下内容复制源itemList -->
+        <view class='rating_header_right'>
+            <view class='right-block'>
+                <text>碳水化合物:</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.cho}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block'>
+                <text>蛋白质:</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.egg}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block'>
+                <text>其他无机物:</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.other}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block-two'>
+                <text>能量</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.energy}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block-two'>
+                <text>脂肪</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.fat}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block'>
+                <text>Na+:</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.na}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block'>
+                <text>Ca2+:</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.ca2}}
+                    <text>%</text>
+                </view>
+            </view>
+            <view class='right-block'>
+                <text>维生素C:</text>
+                <view class='rating_num color-orange'>{{ratingScoresData.vc}}
+                    <text>%</text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <!-- end of nutrition_contain -->
+    <view class='detail_charts' bindtap='gotoecharts'>
+        <text class='font-3 '>查看详细信息</text>
+        <image src='../../images/right.svg'></image>
+    </view>
+
 </view>
+<view class='error-msg' wx:if="{{isHaveOrderList}}">
+    <text class='font-3 '>抱歉，还没有订单数据喔。</text>
+</view>
+
+<view bindtap='togglehave' class='fix_icon'>@</view>

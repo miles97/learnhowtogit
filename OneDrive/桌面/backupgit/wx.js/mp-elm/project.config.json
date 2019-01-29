@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -46,8 +46,8 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "fillterList",
+					"id": 1,
+					"name": "搜索fillterList",
 					"pathName": "pages/fillterList/fillterList",
 					"query": ""
 				},
@@ -70,8 +70,8 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "订单",
+					"id": 5,
+					"name": "订单mine",
 					"pathName": "pages/mine/mine",
 					"query": ""
 				},
@@ -84,7 +84,26 @@
 				{
 					"id": -1,
 					"name": "map",
-					"pathName": "pages/mapStatus/mapStatus"
+					"pathName": "pages/mapStatus/mapStatus",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "报表mine",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "帮助help",
+					"pathName": "pages/help/help",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "consume",
+					"pathName": "pages/consume/consume",
+					"query": ""
 				}
 			]
 		}

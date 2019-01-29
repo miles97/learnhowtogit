@@ -35,6 +35,23 @@ Component({
         url: '../mine/mine',
       })
     },
+    gotoinfo:function(){
+        wx.switchTab({
+            url: '../nameList/nameList',
+        })
+    },
+    //为了在getuserinfo之前点击我的获取不到用户信息的问题
+    onPullDownRefresh: function () {
+        // 显示顶部刷新图标
+        wx.showNavigationBarLoading();
+        this.onLoad();
+        setTimeout(function () {
+            // 隐藏导航栏加载框
+            wx.hideNavigationBarLoading();
+            // 停止下拉动作
+            wx.stopPullDownRefresh();
+        }, 2000)
+    },
     onLoad: function () {
       wx.getUserInfo({
         success: res => {

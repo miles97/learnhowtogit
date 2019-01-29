@@ -38,7 +38,8 @@ page{
   box-sizing: border-box;
   height: 100%;
   overflow: hidden;
-  /* margin-top: .5rem; */
+  padding-top:10px;
+
 }
 .info-data-link{
   float:left;
@@ -83,10 +84,22 @@ align-items: center; */
   /* border-bottom:1px solid #f1f1f1; */
   /* border-top: 1px solid #f1f1f1; */
   padding:.433333em .266667em .433333em 0;
-  display:flex;
   /* justify-content:space-between; */
-  
 }
-.myorder text{
-  display: block;
+.myorder image{
+    width: 45rpx;
+    height: 45rpx;
+    float: right;
+    padding-right: 20rpx;
+}
+.myorder-div{
+    width: 100%;
+    line-height: 60rpx;
+}
+.myorder-div image{
+    width: 45rpx;
+    height: 45rpx;
+    float: right;
+    padding-right: 20rpx;
+    margin-top: 12rpx;
 }
