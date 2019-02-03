@@ -11,9 +11,14 @@
     ></map>
   </view>
   <view class="btn-area">
-    <button bindtap="getCenterLocation" class="page-body-button color-bg-blue">获取位置</button>
-    <button bindtap="moveToLocation" class="page-body-button color-bg-blue">{{msiteTitle.name}}</button>
-    <button class='page-body-button color-bg-blue ' bindtap='getback'>确认定位</button>
+    <view bindtap="getCenterLocation" class="page-body-button">获取位置</view>
+    <view class='page-body-button' bindtap='getback'>
+    <view wx:if="{{msiteTitle.name!=null}}">{{msiteTitle.name}}</view>
+    <view wx:else>确认位置</view>
+    </view>
     <view></view>
   </view>
+    <view bindtap="moveToLocation" class="location_icon">
+    <image src='../../images/location.png'> </image>
+    </view>
 </view>

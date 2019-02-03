@@ -21,7 +21,7 @@ Component({
       download:function(){
               wx.showToast({
                 title: "还没做完 ^_^",
-                icon: 'yes',
+                  icon: 'loading',
                 duration: 2000,
               })
       }

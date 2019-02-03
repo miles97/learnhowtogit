@@ -49,7 +49,7 @@ Component({
       })
     },
     getUserInfo:function(e){
-      console.log(e)
+    //   console.log(e)
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         userInfo: e.detail.userInfo,
@@ -89,32 +89,24 @@ Component({
           }
         })
       }
-      // var geoinfoList = this.data.geoinfoList;
-      // let geoinfo = wx.getStorageSync("geoinfo");
-      // this.data.geoinfoList = geoinfo.name;
-      // console.log(geoinfo);
-        this.setData({
-          // geoinfoList: geoinfo.name,
-        })
+
     },
     onShow:function(){
-      // var geoinfoList = this.data.geoinfoList;
-      let geoinfo = wx.getStorageSync("geoinfo");
-      this.data.geoinfoList = geoinfo.name;
-      this.setData({
-        geoinfoList: geoinfo.name,
-      });
-      this.init();
+    let geoinfo = wx.getStorageSync("geoinfo");
+    if (geoinfo!=null){
+        var geoinfoList = this.data.geoinfoList;
+        geoinfoList = geoinfo.name;
+        this.setData({
+            geoinfoList: geoinfoList,
+        });
+        this.init();
+    }else{
+        
+    }
     },
     init: function(){
       this.onLoad();
     },
-    // onHide:function(){
-    //   let geoinfo = wx.getStorageSync("geoinfo");
-    //   this.data.geoinfoList = geoinfo.name;
-    //   this.setData({
-    //     geoinfoList: geoinfo.name,
-    //   })
-    // }
+
   }
 })
