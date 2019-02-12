@@ -3,7 +3,6 @@
   <!-- 收货地址   -->
 
   <view class='recive_address' bindtap='gotoAddress'>
-    <image></image>
     <text class='font-3'> </text>
 
   </view>

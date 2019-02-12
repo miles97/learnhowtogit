@@ -40,14 +40,14 @@
     <view class='myorder' bindtap="gotodownload">
       <!-- <view> <image></image> </view> -->
       <view class='myorder-div'>
-        <text class='font-3'>download</text>
+        <text class='font-3'>导出数据</text>
         <image src='../../images/right.svg'></image>
       </view>
     </view>
     
     <view class='myorder' bindtap='gotoservice'>
       <view class='myorder border-top-gray'>
-        <text class='font-3'>help</text>
+        <text class='font-3'>帮助</text>
         <image src='../../images/right.svg'></image>
       </view>
     </view>
@@ -56,14 +56,14 @@
   <view class='profile-1reTe'>
     <view class='myorder' bindtap="gotoorder">
       <view class='myorder-div'>
-        <text class='font-3'>data</text>
+        <text class='font-3'>订单/报表</text>
         <image src='../../images/right.svg'></image>
       </view>
     </view>
 
       <view class='myorder' bindtap="gotoVIP">
       <view class='myorder border-top-gray'>
-        <text class='font-3'>others</text>
+        <text class='font-3'>其他</text>
         <image src='../../images/right.svg'></image>
       </view>
     </view>

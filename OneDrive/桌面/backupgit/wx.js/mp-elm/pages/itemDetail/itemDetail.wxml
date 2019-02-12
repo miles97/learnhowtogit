@@ -5,7 +5,7 @@
     <!-- 头部商家详情页 -->
     <view class='detail-top'>
         <!--image  -->
-        <image src="../../images/jifen.jpeg"></image>
+        
         <view class='font-first'>
             <text class='font-2'>{{itemDetail.shopname}}</text>
         </view>

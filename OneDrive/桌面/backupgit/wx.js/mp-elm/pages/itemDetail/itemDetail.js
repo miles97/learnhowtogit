@@ -77,24 +77,35 @@ Component({
             //     duration: 2000,
             //   })
         },
-        //minus数量,正规军，问题是三维数组过分麻烦不好修改数据，所以暂且流氓
+        //minus数量
         minusCount(e) {
-            const index = e.currentTarget.dataset.index;
-            let foodsList = this.data.foodsList;
-            let arr3 = [];
-            foodsList.forEach((item, index) => {
-                arr3.push(item.forEach((item, index) => {
-                    arr3.push(item.is_featured)
-                }))
-            })
-            let num = arr3[index];
-            num = num++;
-            arr3[index] = num;
-            this.setData({
-                foodsList: foodsList,
-            });
+            // const index = e.currentTarget.dataset.index;
+            // let foodsList = this.data.foodsList;
+            // let arr3 = [];
+            // foodsList.forEach((item, index) => {
+            //     arr3.push(item.forEach((item, index) => {
+            //         arr3.push(item.is_featured)
+            //     }))
+            // })
+            // let num = arr3[index];
+            // num = num++;
+            // arr3[index] = num;
+            // this.setData({
+            //     foodsList: foodsList,
+            // });
             // this.getTotalPrice();
-
+            const index = e.currentTarget.dataset.index;
+            let add = this.data.add;
+            let num = add[index];
+            if (num > 0) {
+            num = num - 1;
+            add[index] = num
+            this.setData({
+                add: add,
+            })
+            }else{
+                num = 0;
+            }
         },
         // add数量
         addCount(e) {
@@ -107,6 +118,7 @@ Component({
                 add: add,
             })
         },
+
         gotopay() {
             wx.navigateTo({
                 url: '../confirmOrder/confirmOrder',

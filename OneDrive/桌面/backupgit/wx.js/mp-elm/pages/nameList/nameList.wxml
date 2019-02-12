@@ -17,7 +17,7 @@
   </view>
 
   <!-- 轮播头图 -->
-  <view class='majoy-head border-gray'>
+  <view class='majoy-head '>
     <view class="single-majoy" bindtap="gotoList">
     <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
     </view>

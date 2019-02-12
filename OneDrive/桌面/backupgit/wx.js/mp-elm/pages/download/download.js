@@ -20,8 +20,8 @@ Component({
   methods: {
       download:function(){
               wx.showToast({
-                title: "还没做完 ^_^",
-                  icon: 'loading',
+                title: "正在保存中",
+                icon: 'loading',
                 duration: 2000,
               })
       }

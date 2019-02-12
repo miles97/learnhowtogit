@@ -40,6 +40,11 @@ Component({
             url: '../nameList/nameList',
         })
     },
+      gotoservice:function(){
+        wx.navigateTo({
+            url: '../help/help',
+        })
+      },
     //为了在getuserinfo之前点击我的获取不到用户信息的问题
     onPullDownRefresh: function () {
         // 显示顶部刷新图标
