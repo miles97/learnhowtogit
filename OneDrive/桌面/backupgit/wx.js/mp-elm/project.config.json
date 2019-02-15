@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -103,6 +103,12 @@
 					"id": -1,
 					"name": "consume",
 					"pathName": "pages/consume/consume",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "help",
+					"pathName": "pages/help/help",
 					"query": ""
 				},
 				{

@@ -38,7 +38,6 @@
   <view class='profile-1reTe'>
 
     <view class='myorder' bindtap="gotodownload">
-      <!-- <view> <image></image> </view> -->
       <view class='myorder-div'>
         <text class='font-3'>导出数据</text>
         <image src='../../images/right.svg'></image>

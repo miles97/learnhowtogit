@@ -1,3 +1,20 @@
-<view class="main">
-    说明
+<view class='color-white question-wrap color-bg-question'>
+  <view class='common-list' wx:for="{{nationalList}}" wx:key="index" wx:for-index="index" wx:if='{{questionId == 1}}'>
+    <view class='common-wrap border-report-bottom'>
+      <view class='name color-question'>[{{item.name}}]</view>
+      <view class='value'>{{item.value}}</view>
+    </view>
+  </view>
+  <view class='region-list' wx:for="{{regionList}}" wx:key="index" wx:for-index="index" wx:if='{{questionId == 2}}'>
+  <view class='common-wrap border-report-bottom'>
+    <view class='name color-question'>[{{item.name}}]</view>
+    <view class='value'>{{item.value}}</view>
+  </view>
+  </view>
+  <view class='common-list' wx:for="{{briefingList}}" wx:key="index" wx:for-index="index" wx:if='{{questionId == 3}}'>
+ <view class='common-wrap border-report-bottom'>
+    <view class='name color-question'>[{{item.name}}]</view>
+    <view class='value'>{{item.value}}</view>
+  </view>
+  </view>
 </view>

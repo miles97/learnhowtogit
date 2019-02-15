@@ -1,1 +1,23 @@
-/* pages/help/help.wxss */
+page{
+    background:#3190e8;
+}
+.question-wrap{
+  font-size: 26rpx;
+  padding: 60rpx 40rpx;
+}
+.common-wrap{
+  padding: 20rpx;
+}
+.name,.value{
+  display: inline;
+  line-height: 46rpx;
+}
+.name{
+  margin-right:16rpx; 
+}
+.common-list:last-child .common-wrap{
+  border:0;
+}
+.color-question{
+    color: rgb(233, 236, 58);
+}

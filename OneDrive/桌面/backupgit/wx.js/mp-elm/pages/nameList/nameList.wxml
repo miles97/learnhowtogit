@@ -24,12 +24,12 @@
   </view>
 
   <!-- 附近商家列表 -->
-  <view class='shop-list' wx:if="{{}}">
+  <view class='shop-list' wx:if="{{true}}">
     <view class='single-shop-item' wx:for="{{nameList.what}}" wx:for-index="index" wx:key="index" bindtap='gotoShop'>
     <view class='imgCut'>
-    <image src='../../images/zhifubao.png'></image></view>
+    <image src='../../images/user.png'></image></view>
     <view class='itself'>
-    <text class='font-2'> {{item.name}}</text>
+    <text class='font-2' data-id='{{item.name}}' data-value="{{index}}">{{item.name}}</text>
     <text class='font-4'>起送:￥{{item.start}}</text>
     <text class='font-4'>配送:￥{{item.price}}</text>
     </view>

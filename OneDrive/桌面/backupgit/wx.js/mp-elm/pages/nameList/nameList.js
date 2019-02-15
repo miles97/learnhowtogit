@@ -17,21 +17,22 @@ Component({
     nameList:{
       "locationName": "佳都大厦", 
       "what": [{ 
-      "name": "杨国福", 
+      "name": "健康轻食捞烫", 
       "price": 3,
       "start":20
           }, { 
-      "name": "张亮麻辣烫", 
+      "name": "大步大骨浓汤麻辣烫", 
       "price": 3,
       "start": 20
           }, {
-      "name": "觅姐的麻辣烫", 
+      "name": "清汤小面", 
       "price": 3,
       "start": 20
       }]
     },
     hasUserInfo: false,
     geoinfoList:"请选择地址",
+      shopname:""
   },
 
   /**
@@ -43,13 +44,20 @@ Component({
         url: '../fillterList/fillterList',
       })
     },
-    gotoShop:function(){
-      wx.navigateTo({
+    gotoShop:function(e){
+    var shopname = e.target.dataset.id;
+    // console.log(shopname),
+    wx.setStorageSync("shopname", shopname);
+    // console.log(e.target.dataset.value);
+    var restaurant_id =e.target.dataset.value + 4;
+        wx.setStorageSync("restaurant_id", restaurant_id);
+
+    wx.navigateTo({
         url: '../itemDetail/itemDetail',
-      })
+    })
     },
     getUserInfo:function(e){
-    //   console.log(e)
+
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         userInfo: e.detail.userInfo,
