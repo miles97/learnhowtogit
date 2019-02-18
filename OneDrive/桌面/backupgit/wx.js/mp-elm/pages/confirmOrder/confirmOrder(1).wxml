@@ -1,0 +1,53 @@
+<view class='main color-bg-blue color-white'>
+
+    <!-- 收货地址   -->
+    <view class='recive_address' bindtap='gotoAddress'>
+        <text class='font-3'>订单配送至</text>
+        <view>
+            <text class='font-2'>{{geoinfoList}}</text> </view>
+        <view>{{userinfo.nickname}}</view>
+    </view>
+    <!-- 送达时间 -->
+    <view class='arr_time color-black color-bg-white'>
+        <view class='arr_time-line boder-bottom-gray'>
+            <text class='font-set'>送达时间</text>
+            <text style='float:right;padding-right:20px;' class='font-set'>{{hour}}:{{minute}}</text>
+        </view>
+        <view class='arr_time-line'>
+            <text class='font-set'>支付方式</text>
+            <text style='float:right;padding-right:20px;' class='font-set'>{{payway}}</text>
+        </view>
+    </view>
+    <!-- 支付方式   -->
+    <view class='paychoise' bingtap="gotoPay" wx:if="{{false}}">
+        <text class='list-left'> </text>
+    </view>
+    <!-- 菜品详情确认区域 -->
+    <view class='food-block color-black color-bg-white'>
+        <view class='food-line boder-bottom-gray'>
+            <text class='font-set'>{{shopname}}</text> </view>
+        <view class='food-line boder-bottom-gray'>
+            <text class='font-set2 color-red' wx:if="{{!isHaveMainFood}}">您的主食点了吗</text> </view>
+        <view class='food-line-block'>
+
+        </view>
+        <view class='food-line border-top-gray'>
+            <text class='font-set'>优惠折扣</text> </view>
+    </view>
+    <!-- extra-block -->
+    <view class='extra-block color-black color-bg-white'>
+        <view class='food-line boder-bottom-gray'>
+            <text class='font-set'>营养含量详情</text>
+        </view>
+        <view class='food-line boder-bottom-gray'>
+            <text class='font-set'></text> </view>
+        <view class='food-line boder-bottom-gray'>
+            <text class='font-set'></text> </view>
+    </view>
+
+    <view class='fix-bottom'>
+        <view>￥{{howmuch}}</view>
+    </view>
+
+    <view class='fix-botton-bottom color-white' bindtap='gotopay'>确认支付</view>
+</view>
