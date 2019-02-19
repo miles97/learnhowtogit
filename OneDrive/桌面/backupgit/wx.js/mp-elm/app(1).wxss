@@ -1,0 +1,82 @@
+/**app.wxss**/
+
+page {
+    background-color: #f5f5f5;
+}
+
+.color-bg-blue {
+    background-color: #3190e8;
+}
+
+.color-bg-greed {
+    background-color: #91d14cfd;
+}
+.color-bg-white{
+    background-color: #fff;
+}
+.color-blue {
+    color: #3190e8;
+}
+
+.color-red {
+    color: #ff5f3e;
+}
+
+.color-green {
+    color: #6ac20b;
+}
+
+.color-orange {
+    color: #f90;
+}
+
+.color-black {
+    color: #000;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.big {
+    font-weight: 700;
+}
+
+.border-white {
+    border: 1px solid #ccc;
+}
+
+.border-gray {
+    border: 1px solid #000;
+}
+
+.border-top-gray {
+    border-top: 1px solid #f1f1f1;
+}
+.boder-bottom-gray{
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.border-bottom-ccc{
+    border-bottom:1px solid #ccc;
+
+}
+.font-1 {
+    font-size: 2em;
+}
+
+.font-2 {
+    font-size: 1em;
+}
+
+.font-3 {
+    font-size: 28rpx;
+}
+
+.font-4 {
+    font-size: 20rpx;
+}
+
+text {
+    font-size: 22rpx;
+}
