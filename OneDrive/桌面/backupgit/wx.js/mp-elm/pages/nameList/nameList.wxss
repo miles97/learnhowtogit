@@ -65,10 +65,15 @@ button {
 }
 
 .imgCut {
-    width: 20%;
+    width: 100rpx;
     height: 100rpx;
     /* display: inline-block; */
     float: left;
+    text-align:center;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
 }
 
 .imgCut image {
@@ -81,7 +86,7 @@ button {
     width: 65%;
     padding: 0 0 10px 10px;
     /* vertical-align: middle; */
-    line-height: 40px;
+    /* line-height: 40px; */
     float: left;
 }
 
@@ -93,4 +98,14 @@ button {
 .single-shop-item {
     width: auto;
     height: 35%;
+    margin-top:10px;
+}
+.font-set{
+    color: #ccc;
+}  
+.more{
+
+}
+.font-roand{
+    font-weight: 900;
 }

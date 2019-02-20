@@ -56,6 +56,11 @@ page {
 .boder-bottom-gray{
     border-bottom: 1px solid #f1f1f1;
 }
+
+.border-bottom-ccc{
+    border-bottom:1px solid #ccc;
+
+}
 .font-1 {
     font-size: 2em;
 }

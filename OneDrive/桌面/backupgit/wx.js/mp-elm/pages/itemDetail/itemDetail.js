@@ -34,8 +34,8 @@ Component({
         itemId: 0,
         add: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], //接口返回的数据过分复杂，先造点数据嘻嘻
         num: null,
-        deliveryFee:6,
-        shopname:"",
+        deliveryFee: 3,
+        shopname: "",
         restaurant_id: 1,
     },
 
@@ -99,12 +99,12 @@ Component({
             let add = this.data.add;
             let num = add[index];
             if (num > 0) {
-            num = num - 1;
-            add[index] = num
-            this.setData({
-                add: add,
-            })
-            }else{
+                num = num - 1;
+                add[index] = num
+                this.setData({
+                    add: add,
+                })
+            } else {
                 num = 0;
             }
         },
@@ -125,10 +125,10 @@ Component({
                 url: '../confirmOrder/confirmOrder',
             })
         },
-        showCartList(){
-            this.data.showCartList=!this.data.showCartList
+        showCartList() {
+            this.data.showCartList = !this.data.showCartList
             this.setData({
-                showCartList:showCartList
+                showCartList: showCartList
             })
         },
         //初始化数据
@@ -140,7 +140,7 @@ Component({
             let restaurant_id = wx.getStorageSync("restaurant_id");
 
             let data = {
-                restaurant_id: restaurant_id||1,
+                restaurant_id: restaurant_id || 1,
             }
 
             commonService.getMenuList(data).then(res => {
@@ -160,11 +160,18 @@ Component({
         onLoad: function() {
             let shopname = wx.getStorageSync("shopname");
             this.setData({
-                shopname:shopname,
+                shopname: shopname,
             })
             this.init();
             // this.showCartList();
 
+        },
+        onShow:function(){
+            let shopname = wx.getStorageSync("shopname");
+            this.setData({
+                shopname: shopname,
+            })
+            this.init();
         }
     }
 })

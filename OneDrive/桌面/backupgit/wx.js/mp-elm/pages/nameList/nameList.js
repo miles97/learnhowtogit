@@ -21,7 +21,7 @@ Component({
       "price": 3,
       "start":20
           }, { 
-      "name": "大步大骨浓汤麻辣烫", 
+      "name": "大补大骨浓汤麻辣烫", 
       "price": 3,
       "start": 20
           }, {
@@ -46,7 +46,7 @@ Component({
     },
     gotoShop:function(e){
     var shopname = e.target.dataset.id;
-    // console.log(shopname),
+    console.log(e),
     wx.setStorageSync("shopname", shopname);
     // console.log(e.target.dataset.value);
     var restaurant_id =e.target.dataset.value + 4;
@@ -97,7 +97,6 @@ Component({
           }
         })
       }
-
     },
     onShow:function(){
     let geoinfo = wx.getStorageSync("geoinfo");

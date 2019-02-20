@@ -72,7 +72,6 @@
         <!-- footer，底栏结算区域 -->
         <view class='footer-bottom' bingtap="gotoConfirm">
             <!-- <view class='shopcart'>
-        <image></image>
       </view> -->
         </view>
 
@@ -150,7 +149,6 @@
                 </view>
             </view>
         </view>
-
     </view>
 
     <!-- mask 遮罩层 -->
