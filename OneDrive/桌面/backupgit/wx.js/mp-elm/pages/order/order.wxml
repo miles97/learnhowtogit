@@ -1,71 +1,71 @@
 <!--pages/order/order.wxml-->
 <view class='profile_page'>
-  <!-- section one -->
-  <view class='profile_number'>
-    <view class='profile-link' bindtap='gotoinfo'>
-      <image src='{{userInfo.avatarUrl}}' class='privateImage'></image>
-      <view class='user-info'>
-        <text class='font-2'>{{userInfo.nickName}}</text>
-        <view></view>
-        <text class='font-3'>绑定手机号:{{mobile == "请绑定手机号" ? "-" : "mobile"}}</text>
-      </view>
-      <view class='arrow'>
-        <!-- <image></image> -->
-      </view>
+    <!-- section one -->
+    <view class='profile_number'>
+        <view class='profile-link' bindtap='gotoinfo'>
+            <image src='{{userInfo.avatarUrl}}' class='privateImage'></image>
+            <view class='user-info'>
+                <text class='font-2'>{{userInfo.nickName}}</text>
+                <view></view>
+                <text class='font-3'>绑定手机号:{{mobile == "请绑定手机号" ? "-" : "mobile"}}</text>
+            </view>
+            <view class='arrow'>
+                <!-- <image></image> -->
+            </view>
+        </view>
     </view>
-  </view>
-  <!-- end of s1 -->
+    <!-- end of s1 -->
 
-  <!-- section two -->
-  <view class='info-data'>
-    <view class="clear">
-      <view class='info-data-link' bindtap='gotobalance'>
-        <text class='big'>{{balance}}元</text>
-        <text class='color-black'>我的余额</text>
-      </view>
-      <view class='info-data-link' bindtap='gotobenefit'>
-        <text class='big'>{{count}}个</text>
-        <text class='color-black'>我的优惠</text>
-      </view>
-      <view class='info-data-link' bindtap='gotopoints'>
-        <text class='big'>{{pointNumber}}分</text>
-        <text class='color-black'>我的积分</text>
-      </view>
+    <!-- section two -->
+    <view class='info-data'>
+        <view class="clear">
+            <view class='info-data-link' bindtap='gotobalance'>
+                <text class='big'>{{balance}}元</text>
+                <text class='color-black'>我的余额</text>
+            </view>
+            <view class='info-data-link' bindtap='gotobenefit'>
+                <text class='big'>{{count}}个</text>
+                <text class='color-black'>我的优惠</text>
+            </view>
+            <view class='info-data-link' bindtap='gotopoints'>
+                <text class='big'>{{pointNumber}}分</text>
+                <text class='color-black'>我的积分</text>
+            </view>
+        </view>
+
     </view>
+    <!-- end of s2 -->
+    <view class='profile-1reTe'>
 
-  </view>
-  <!-- end of s2 -->
-  <view class='profile-1reTe'>
+        <view class='myorder' bindtap="gotodownload">
+            <view class='myorder-div'>
+                <text class='font-3'>导出数据</text>
+                <image src='../../images/right.svg'></image>
+            </view>
+        </view>
 
-    <view class='myorder' bindtap="gotodownload">
-      <view class='myorder-div'>
-        <text class='font-3'>导出数据</text>
-        <image src='../../images/right.svg'></image>
-      </view>
-    </view>
-    
-    <view class='myorder' bindtap='gotoservice'>
-      <view class='myorder border-top-gray'>
-        <text class='font-3'>帮助</text>
-        <image src='../../images/right.svg'></image>
-      </view>
-    </view>
-  </view>
-
-  <view class='profile-1reTe'>
-    <view class='myorder' bindtap="gotoorder">
-      <view class='myorder-div'>
-        <text class='font-3'>订单/报表</text>
-        <image src='../../images/right.svg'></image>
-      </view>
+        <view class='myorder' bindtap='gotoservice'>
+            <view class='myorder border-top-gray'>
+                <text class='font-3'>帮助</text>
+                <image src='../../images/right.svg'></image>
+            </view>
+        </view>
     </view>
 
-      <view class='myorder' bindtap="gotoVIP">
-      <view class='myorder border-top-gray'>
-        <text class='font-3'>其他</text>
-        <image src='../../images/right.svg'></image>
-      </view>
+    <view class='profile-1reTe'>
+        <view class='myorder' bindtap="gotoorder">
+            <view class='myorder-div'>
+                <text class='font-3'>订单/报表</text>
+                <image src='../../images/right.svg'></image>
+            </view>
+        </view>
+
+        <view class='myorder' bindtap="gotoVIP">
+            <view class='myorder border-top-gray'>
+                <text class='font-3'>其他</text>
+                <image src='../../images/right.svg'></image>
+            </view>
+        </view>
     </view>
-  </view>
 
 </view>

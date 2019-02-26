@@ -5,7 +5,7 @@
     <!-- 头部商家详情页 -->
     <view class='detail-top'>
         <!--image  -->
-        
+
         <view class='font-first'>
             <text class='font-2'>{{shopname}}</text>
         </view>
@@ -153,5 +153,4 @@
 
     <!-- mask 遮罩层 -->
     <view class='mask' hidden="{{showCartList}}" bindtap="isCloseCart"></view>
-    <view class=''></view>
 </view>

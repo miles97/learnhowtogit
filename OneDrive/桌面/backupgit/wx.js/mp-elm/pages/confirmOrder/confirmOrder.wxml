@@ -1,3 +1,5 @@
+<wxs module="arrSum" src="../../utils/util.wxs"></wxs>
+
 <view class='main color-bg-blue color-white'>
 
     <!-- 收货地址   -->
@@ -27,9 +29,14 @@
         <view class='food-line boder-bottom-gray'>
             <text class='font-set'>{{shopname}}</text> </view>
         <view class='food-line boder-bottom-gray'>
-            <text class='font-set2 color-red' wx:if="{{!isHaveMainFood}}">您的主食点了吗</text> </view>
+            <text class='font-set2 color-red' wx:if="{{!isHaveMainFood}}">您的主食点了吗</text> <text style='float:right;'>数量</text></view>
         <view class='food-line-block'>
-
+            <view class='food-item-1'>{{shopitemList[0]}}</view>
+            <!-- 测试数组内容排列 -->
+            <view class="food-item-2" wx:if="{{shopitemList[0]}}">{{shopitemList[0]}}</view>
+            <view class="food-item-2" wx:if="{{shopitemList[2]}}">{{shopitemList[2]}}</view>
+            <view class="food-item-2" wx:if="{{shopitemList[3]}}">{{shopitemList[3]}}</view>
+            <view class="food-item-2" wx:if="{{shopitemList[4]}}">{{shopitemList[4]}}</view>
         </view>
         <view class='food-line border-top-gray'>
             <text class='font-set'>优惠折扣</text> </view>
@@ -46,7 +53,7 @@
     </view>
 
     <view class='fix-bottom'>
-        <view>￥{{howmuch}}</view>
+        <view>￥{{arrSum.add_arr_sum(add)*20+3}}</view>
     </view>
 
     <view class='fix-botton-bottom color-white' bindtap='gotopay'>确认支付</view>

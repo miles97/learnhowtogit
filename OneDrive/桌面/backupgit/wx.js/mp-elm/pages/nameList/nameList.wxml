@@ -29,11 +29,11 @@
             <view class='imgCut'>
                 <image src='../../images/user.png'></image>
             </view>
-            <view class='itself'>
-                <text class='font-2 font-roand' data-id='{{item.name}}' data-value="{{index}}">{{item.name}}</text>
+            <view class='itself' >
+                <view class='font-2 font-roand' data-id='{{item.name}}' data-value="{{index}}">{{item.name}}</view>
                 <view class='more'>
-                <text class='font-4 font-set'>起送:￥{{item.start}}</text>
-                <text class='font-4 font-set'>配送:￥{{item.price}}</text>
+                    <text class='font-4 font-set'>起送:￥{{item.start}}</text>
+                    <text class='font-4 font-set'>配送:￥{{item.price}}</text>
                 </view>
             </view>
         </view>

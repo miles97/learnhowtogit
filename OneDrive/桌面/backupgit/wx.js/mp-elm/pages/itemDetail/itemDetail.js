@@ -27,7 +27,7 @@ Component({
             "order_lead_time": 20,
         },
         itemDetail: {
-            "intro": "真好次，你吼辣么大声干嘛!",
+            "intro": "真好恰，你吼辣么大声干嘛!",
             "exintro": "开业期间全场骨折"
         },
         menuList: [],
@@ -37,6 +37,7 @@ Component({
         deliveryFee: 3,
         shopname: "",
         restaurant_id: 1,
+        shopitemList: [],
     },
 
     /**
@@ -118,6 +119,16 @@ Component({
             this.setData({
                 add: add,
             })
+            let shopitem = e._relatedInfo.anchorRelatedText;
+            var shopitemList = [];
+            shopitemList.unshift(shopitem)
+            this.setData({
+                shopitemList: shopitemList,
+            })
+            wx.setStorageSync("shopitemList", shopitemList);
+            wx.setStorageSync("add", add);
+            console.log(shopitemList.unshift(shopitem));
+            console.log(shopitemList);
         },
 
         gotopay() {
@@ -140,7 +151,7 @@ Component({
             let restaurant_id = wx.getStorageSync("restaurant_id");
 
             let data = {
-                restaurant_id: restaurant_id || 1,
+                restaurant_id: restaurant_id,
             }
 
             commonService.getMenuList(data).then(res => {
@@ -164,9 +175,8 @@ Component({
             })
             this.init();
             // this.showCartList();
-
         },
-        onShow:function(){
+        onShow: function() {
             let shopname = wx.getStorageSync("shopname");
             this.setData({
                 shopname: shopname,
