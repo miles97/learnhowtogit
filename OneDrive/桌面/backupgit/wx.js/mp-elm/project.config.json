@@ -119,8 +119,8 @@
 				},
 				{
 					"id": -1,
-					"name": "consume",
-					"pathName": "pages/consume/consume",
+					"name": "NRV",
+					"pathName": "pages/VRVcompute/nrvcom",
 					"scene": null
 				}
 			]

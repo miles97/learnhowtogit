@@ -9,7 +9,8 @@
     "pages/download/download",
     "pages/mapStatus/mapStatus",
     "pages/help/help",
-    "pages/consume/consume"
+    "pages/consume/consume",
+    "pages/VRVcompute/nrvcom"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -46,8 +46,12 @@
                         <view class='font-2'>{{foods.name}}</view>
                         <view class='food_description_content'>{{foods.description}}</view>
                         <view class='food_description_sale_rating'>
-                            <text>月售{{foods.month_sales}}份</text>
-                            <text>好评率{{foods.satisfy_rate}}%</text>
+                            <!-- <text>月售{{foods.month_sales}}份</text>
+                            <text>好评率{{foods.satisfy_rate}}%</text> -->
+                            <text>热量{{foods.satisfy_count}}mg</text>
+                            <text>蛋白质含量{{foods.rating_count}}%</text>
+                            <text>糖类含量{{foods.month_sales}}%</text>
+                            <text>营养价值评分{{foods.rating}}</text>
                         </view>
                         <view class='menu_detail_footer'>
                             <view class='food_price'>

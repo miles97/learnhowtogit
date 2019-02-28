@@ -36,6 +36,7 @@ Page({
     },
     getback: function(params) {
         let geohash = wx.getStorageSync("geohash");
+        
         return new Promise((resolve, reject) => {
             return wx.request({
                 url: 'http://elm.cangdu.org/v2/pois/' + geohash,
@@ -45,7 +46,7 @@ Page({
                     } else {
                         resolve(res.data);
                         var geoinfo = res.data;
-                        console.log(res.data.name);
+                        console.log(res);
                         // var msiteTitle = this.data.msiteTitle;
                         // msiteTitle.name = res.data.name;
                         // this.setData({
@@ -63,6 +64,7 @@ Page({
 
     },
     onLoad: function() {
+        this.getback();
         var geoinfo = wx.getStorageSync("geoinfo");
         this.data.msiteTitle = geoinfo;
         this.setData({

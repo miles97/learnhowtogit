@@ -29,6 +29,11 @@ Component({
                 url: '../help/help',
             })
         },
+        gotoCOP: function(){
+            wx.navigateTo({
+                url: '../VRVcompute/nrvcom',
+            })
+        },
         //为了在getuserinfo之前点击我的获取不到用户信息的问题
         onPullDownRefresh: function() {
             // 显示顶部刷新图标

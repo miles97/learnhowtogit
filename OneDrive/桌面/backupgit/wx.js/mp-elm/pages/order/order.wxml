@@ -60,9 +60,9 @@
             </view>
         </view>
 
-        <view class='myorder' bindtap="gotoVIP">
+        <view class='myorder' bindtap="gotoCOP">
             <view class='myorder border-top-gray'>
-                <text class='font-3'>其他</text>
+                <text class='font-3'>NRV价值计算</text>
                 <image src='../../images/right.svg'></image>
             </view>
         </view>

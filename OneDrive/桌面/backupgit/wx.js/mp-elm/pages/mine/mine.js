@@ -11,7 +11,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        isHaveOrderList: false,
+        isHaveOrderList: true,
         ratingScoresData:{
             "cho":200,
             "egg":22,

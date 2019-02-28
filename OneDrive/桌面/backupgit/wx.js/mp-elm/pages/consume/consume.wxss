@@ -3,7 +3,7 @@
     background:rgba(55, 55, 55, .2);
     font-size:60rpx;
     font-weight:800;
-    color:#000;
+    color:#fff;
     padding-left:20px;
     padding-top:18px;
 }
@@ -37,7 +37,4 @@ ec-canvas {
     float: left;
     text-align: center;
     margin-top: 20rpx;
-}
-text{
-  color:#000;
 }

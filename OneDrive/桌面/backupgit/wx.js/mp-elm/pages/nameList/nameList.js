@@ -50,6 +50,7 @@ Component({
     wx.setStorageSync("shopname", shopname);
     // console.log(e.target.dataset.value);
     var restaurant_id =e.target.dataset.value + 4;
+        // var restaurant_id = 4103;
         wx.setStorageSync("restaurant_id", restaurant_id);
 
     wx.navigateTo({
