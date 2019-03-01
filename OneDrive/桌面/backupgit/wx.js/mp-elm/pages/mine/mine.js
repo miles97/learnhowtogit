@@ -40,6 +40,18 @@ Component({
             wx.navigateTo({
                 url: '../consume/consume',
             })
+        },
+        onLoad:function(){
+
+        },
+        onShow:function(){
+            var isHaveOrderList = this.data.isHaveOrderList;
+            if (isHaveOrderList) {
+                // let isHaveOrderList = wx.getStorageSync("isHaveOrderList");  频繁的取值拿值有点影响性能，先用！代替
+                this.setData({
+                    isHaveOrderList: !isHaveOrderList,
+                })
+            }
         }
     },
 })

@@ -15,4 +15,6 @@ export default {
 
     GET_ORDER_LIST: BASE_URL + "/bos/orders",
     // https://elm.cangdu.org/bos/orders
+
+    GET_SHOP_SEARCH: BASE_URL + "/v4/restaurants",
 }

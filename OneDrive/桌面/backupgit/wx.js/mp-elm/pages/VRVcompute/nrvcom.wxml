@@ -1,0 +1,12 @@
+<view class='main'>
+    <view class='input-block'>
+    <view><text>请输入相关营养元素含量，并点击计算按钮。</text></view>   
+    
+    </view>
+    <view class='input-section'><input placeholder='脂肪含量(NRV%)'></input></view>
+    <view class='input-section'><input placeholder='能量含量(NRV%)'></input></view>
+    <view class='input-section'><input placeholder='蛋白质含量(NRV%)'></input></view>
+    <view class='input-section'><input placeholder='碳水化合物含量(NRV%)'></input></view>
+
+    <view class='totalsum' bindtap='gotosum'>计算</view>
+</view>

@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.5.0",
+	"libVersion": "2.6.1",
 	"appid": "wxbed62bce276d362e",
 	"projectname": "mp-elm",
 	"debugOptions": {

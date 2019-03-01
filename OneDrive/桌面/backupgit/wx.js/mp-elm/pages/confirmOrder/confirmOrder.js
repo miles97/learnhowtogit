@@ -29,6 +29,8 @@ Component({
                     duration: 2000,
                 })
             }, 2500)
+            var isHaveOrderList = false;
+            wx.setStorageSync("isHaveOrderList", isHaveOrderList);
         },
         onShow: function() {
             let geoinfo = wx.getStorageSync("geoinfo");

@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "NRV计算器"
 }

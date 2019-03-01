@@ -28,15 +28,13 @@ Page({
                 wx.setStorageSync("geohash", geohash);
             }
         });
-        this.onLoad();
+        // this.onLoad();
     },
     moveToLocation: function() {
         this.mapCtx.moveToLocation();
-
     },
     getback: function(params) {
         let geohash = wx.getStorageSync("geohash");
-        
         return new Promise((resolve, reject) => {
             return wx.request({
                 url: 'http://elm.cangdu.org/v2/pois/' + geohash,
@@ -46,7 +44,7 @@ Page({
                     } else {
                         resolve(res.data);
                         var geoinfo = res.data;
-                        console.log(res);
+                        // console.log(res);
                         // var msiteTitle = this.data.msiteTitle;
                         // msiteTitle.name = res.data.name;
                         // this.setData({

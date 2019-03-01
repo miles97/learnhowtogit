@@ -7,7 +7,9 @@ Page({
     data: {
 
     },
-
+    gotosum:function(){
+        console.log("还没做好捏")
+    },
     /**
      * 生命周期函数--监听页面加载
      */
