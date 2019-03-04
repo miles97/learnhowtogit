@@ -1,3 +1,6 @@
+<wxs module="nrvContain" src="../../utils/NRV.wxs"></wxs>
+<!-- 使用方法{{nrvContain.energyContain(num)}} -->
+
 <view class='main' wx:if="{{!isHaveOrderList}}">
     <!-- 订单内容 -->
     <view class='head_top'>
@@ -9,7 +12,7 @@
     <!-- 营养价值列表 -->
     <view class='nutrition_contain'>
         <view>
-            <text class='font-3'>Today's Nutrition </text>
+            <text class='font-3'>Today's Nutrition</text>
         </view>
         <view>
             <text>营养素参考值(NRV):</text> </view>
@@ -17,49 +20,49 @@
         <view class='rating_header_right'>
             <view class='right-block'>
                 <text>碳水化合物:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.cho}}
+                <view class='rating_num color-orange'>{{nrvContain.carbohydrateContain(ratingScoresData.cho)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block'>
                 <text>蛋白质:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.egg}}
+                <view class='rating_num color-orange'>{{nrvContain.proteinContain(ratingScoresData.egg)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block'>
-                <text>其他无机物:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.other}}
+                <text>膳食纤维:</text>
+                <view class='rating_num color-orange'>{{nrvContain.fiberContain(ratingScoresData.other)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block-two'>
                 <text>能量</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.energy}}
+                <view class='rating_num color-orange'>{{nrvContain.energyContain(ratingScoresData.energy)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block-two'>
                 <text>脂肪</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.fat}}
+                <view class='rating_num color-orange'>{{nrvContain.fatContain(ratingScoresData.fat)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block'>
                 <text>Na+:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.na}}
+                <view class='rating_num color-orange'>{{nrvContain.naContain(ratingScoresData.na)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block'>
                 <text>Ca2+:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.ca2}}
+                <view class='rating_num color-orange'>{{nrvContain.caContain(ratingScoresData.ca)}}
                     <text>%</text>
                 </view>
             </view>
             <view class='right-block'>
                 <text>维生素C:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.vc}}
+                <view class='rating_num color-orange'>{{nrvContain.vcContain(ratingScoresData.vc)}}
                     <text>%</text>
                 </view>
             </view>
@@ -68,7 +71,7 @@
     </view>
     <!-- end of nutrition_contain -->
     <view class='detail_charts' bindtap='gotoecharts'>
-        <text class='font-3 '>查看详细信息</text>
+        <text class='font-3'>查看详细信息</text>
         <image src='../../images/right.svg'></image>
     </view>
 

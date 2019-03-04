@@ -1,3 +1,9 @@
+//公用方法，求数组和
+/**
+ * 曹佳毓
+ * @version v1.00
+ * Modify-Date:2019-3-4 11:9:45
+ */
 var arrSum= {
     add_arr_sum: function sum(arr) {
         var s = 0;

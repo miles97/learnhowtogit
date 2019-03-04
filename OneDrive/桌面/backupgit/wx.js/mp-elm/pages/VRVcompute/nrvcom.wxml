@@ -1,12 +1,39 @@
 <view class='main'>
     <view class='input-block'>
-    <view><text>请输入相关营养元素含量，并点击计算按钮。</text></view>   
-    
+        <view>
+            <text class='color-orange font-3'>请输入相关营养元素含量，并点击计算按钮。</text>
+        </view>
+        <view wx-if="{{fat}}">
+            <text>脂肪含量:{{fat}}%</text>
+        </view>
+        <view wx-if="{{energy}}">
+            <text>能量含量:{{energy}}%</text>
+        </view>
+        <view wx-if="{{protein}}">
+            <text>蛋白质含量：{{protein}}%</text>
+        </view>
+        <view wx-if="{{carbohydrate}}">
+            <text>碳水化合物含量:{{carbohydrate}}%</text>
+        </view>
+        <view wx-if="{{na}}">
+            <text>钠含量:{{na}}%</text>
+        </view>
     </view>
-    <view class='input-section'><input placeholder='脂肪含量(NRV%)'></input></view>
-    <view class='input-section'><input placeholder='能量含量(NRV%)'></input></view>
-    <view class='input-section'><input placeholder='蛋白质含量(NRV%)'></input></view>
-    <view class='input-section'><input placeholder='碳水化合物含量(NRV%)'></input></view>
-
+    <view class='input-section'>
+        <input placeholder='脂肪含量(NRV)g' bindinput='containInput1' value='{{inputValue}}'></input>
+    </view>
+    <view class='input-section'>
+        <input placeholder='能量含量(NRV)KJ' bindinput='containInput2' value='{{inputValue}}'></input>
+    </view>
+    <view class='input-section'>
+        <input placeholder='蛋白质含量(NRV)g' bindinput='containInput3' value='{{inputValue}}'></input>
+    </view>
+    <view class='input-section'>
+        <input placeholder='碳水化合物含量(NRV)g' bindinput='containInput4' value='{{inputValue}}'></input>
+    </view>
+    <view class='input-section'>
+        <input placeholder='钠含量(NRV)mg' bindinput='containInput5' value='{{inputValue}}'></input>
+    </view>
     <view class='totalsum' bindtap='gotosum'>计算</view>
+    <view class='totalsum2' bindtap='init'>重置</view>
 </view>

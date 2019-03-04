@@ -1,0 +1,102 @@
+//公用方法，求各种元素含量的NRV百分值，养素参考值主要依据我国居民膳食营养素推荐摄入量（RNI）和适宜摄入量（AI）而制定。
+//GB 28050—2011 食品安全国家标准 预包装食品营养标签通则
+/**
+ * 曹佳毓
+ * @version v1.00
+ * Modify-Date:2019-3-4 15:01:45
+ */
+var nrvContain = {
+    fatContain: function(num) {
+        var num = Math.floor(num / 60 * 100);
+        if(num<=0.5){
+            return 0;
+        }else{
+            return num;
+        }
+    },
+    energyContain:function(num){
+        var num = Math.floor(num / 8400 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }
+    },
+    proteinContain:function(num){
+        var num = Math.floor(num / 60 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }
+    },
+    carbohydrateContain:function(num){
+        var num = Math.floor(num / 300 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }
+    },
+    naContain:function(num){
+        var num = Math.floor(num / 2000 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }
+    },
+    caContain: function (num) {
+        var num = Math.floor(num / 800 * 100);
+        if (num <= 0.5) {   
+            return 0;
+        } else {
+            return num;
+        }
+    },
+    fiberContain:function(num){
+        var num = Math.floor(num / 25 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        } 
+    },
+    cholesterolContain:function(num){
+        var num = Math.floor(num / 300 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }  
+    },
+    saturatedfattyacidContain:function(num){
+        var num = Math.floor(num / 20 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }  
+    },
+    vcContain:function(num){
+        var num = Math.floor(num / 100 * 100);
+        if (num <= 0.5) {
+            return 0;
+        } else {
+            return num;
+        }  
+    }
+}
+
+module.exports = {
+    fatContain: nrvContain.fatContain,// 脂肪含量 g
+    energyContain: nrvContain.energyContain,// 能量含量 kJ
+    proteinContain: nrvContain.proteinContain,// 蛋白质含量 g
+    carbohydrateContain: nrvContain.carbohydrateContain,// 碳水化合物含量 g
+    naContain: nrvContain.naContain,// Na含量 mg
+    caContain: nrvContain.caContain,//Ca元素含量 mg
+    fiberContain: nrvContain.fiberContain,//膳食纤维含量 g
+    cholesterolContain: nrvContain.cholesterolContain,//胆固醇含量 mg
+    saturatedfattyacidContain: nrvContain.saturatedfattyacidContain,//饱和脂肪酸含量 g
+    vcContain: nrvContain.vcContain,//VC含量  mg
+}

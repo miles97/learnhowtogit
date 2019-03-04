@@ -11,16 +11,16 @@ Component({
      * 组件的初始数据
      */
     data: {
-        isHaveOrderList: true,
+        isHaveOrderList: false,
         ratingScoresData:{
-            "cho":200,
+            "cho":150,
             "egg":22,
-            "other":111,
-            "energy":111,
-            "fat":222,
+            "other":12,
+            "energy":5000,
+            "fat":100,
             "na":1100,
-            "ca2":70,
-            "vc":60
+            "ca":70,
+            "vc":60,
         }
     },
 
@@ -50,6 +50,10 @@ Component({
                 // let isHaveOrderList = wx.getStorageSync("isHaveOrderList");  频繁的取值拿值有点影响性能，先用！代替
                 this.setData({
                     isHaveOrderList: !isHaveOrderList,
+                })
+            }else{
+                this.setData({
+                    isHaveOrderList: isHaveOrderList,
                 })
             }
         }

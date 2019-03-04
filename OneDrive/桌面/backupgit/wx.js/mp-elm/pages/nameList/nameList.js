@@ -32,7 +32,7 @@ Component({
     },
     hasUserInfo: false,
     geoinfoList:"请选择地址",
-      shopname:""
+    shopname:"",
   },
 
   /**

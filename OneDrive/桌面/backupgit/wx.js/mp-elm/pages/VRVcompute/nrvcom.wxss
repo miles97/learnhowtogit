@@ -1,5 +1,6 @@
 /* pages/VRVcompute/nrvcom.wxss */
-.input-block{
+
+.input-block {
     /* border: 1px solid #000; */
     width: 100%;
     height: 170px;
@@ -7,21 +8,35 @@
     background: #fff;
     margin-top: 20px;
 }
-.input-section{
+
+.input-section {
     border-radius: 10px;
     background: #fff;
     margin-top: 20px;
     padding-left: 50px;
 }
-.totalsum{
+
+.totalsum {
     border-radius: 20px;
     width: 70%;
-    height:50px;
+    height: 50px;
     background: rgb(95, 161, 236);
-    margin:20px 50px;
+    margin: 20px 50px;
     text-align: center;
     line-height: 50px;
     vertical-align: middle;
     color: #fff;
-    margin-top: 200px;
+    margin-top: 180px;
+}
+
+.totalsum2 {
+    border-radius: 20px;
+    width: 70%;
+    height: 50px;
+    background: rgb(95, 161, 236);
+    margin: 0 50px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+    color: #fff;
 }
