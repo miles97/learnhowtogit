@@ -44,3 +44,32 @@
     font-weight: bold;
     display: inline-block;
 }
+
+/* .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.item{
+     order: 0;
+     flex-shrink: 1;
+
+} */
+.single-shop-item {
+    width: auto;
+    height: 100px;
+    margin-top:10px;
+    background: #fff;
+}
+.itself {
+    height: 40px;
+    width: 30%;
+    padding: 0 0 10px 10px;
+    /* vertical-align: middle; */
+    /* line-height: 40px; */
+    float: left;
+}
+.more{
+    margin-left: 30%;
+    
+}

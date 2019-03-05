@@ -18,9 +18,13 @@
 
     <!-- 轮播头图 -->
     <view class='majoy-head '>
-        <view class="single-majoy" bindtap="gotoList">
-            <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
-        </view>
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}" wx:key="value">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
     </view>
 
     <!-- 附近商家列表 -->
@@ -29,8 +33,8 @@
             <view class='imgCut'>
                 <image src='../../images/user.png'></image>
             </view>
-            <view class='itself' >
-                <view class='font-2 font-roand' data-id='{{item.name}}' data-value="{{index}}">{{item.name}}</view>
+            <view class='itself'>
+                <view class='font-2 font-roand' data-id="{{item.name}}" data-value="{{index}}">{{item.name}}</view>
                 <view class='more'>
                     <text class='font-4 font-set'>起送:￥{{item.start}}</text>
                     <text class='font-4 font-set'>配送:￥{{item.price}}</text>

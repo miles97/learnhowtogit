@@ -27,9 +27,9 @@
     <!-- 菜品详情确认区域 -->
     <view class='food-block color-black color-bg-white'>
         <view class='food-line boder-bottom-gray'>
-            <text class='font-set'>{{shopname}}</text> </view>
+            <text class='font-set'>{{shopname}}</text></view>
         <view class='food-line boder-bottom-gray'>
-            <text class='font-set2 color-red' wx:if="{{!isHaveMainFood}}">您的主食点了吗</text> <text style='float:right;'>数量</text></view>
+            <text class='font-set2 color-red' wx:if="{{!isHaveMainFood}}">您的主食点了吗</text><text style='float:right;'>数量</text></view>
         <view class='food-line-block'>
             <view class='food-item-1'>{{shopitemList[0]}}</view>
             <!-- 测试数组内容排列 -->

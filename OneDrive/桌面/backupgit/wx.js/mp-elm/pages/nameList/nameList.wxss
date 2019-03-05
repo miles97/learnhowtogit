@@ -103,9 +103,8 @@ button {
 .font-set{
     color: #ccc;
 }  
-.more{
-
-}
 .font-roand{
     font-weight: 900;
 }
+.swiper{width: 100%;height: 200px}
+.slide-image{width: 100%;height: 100%}

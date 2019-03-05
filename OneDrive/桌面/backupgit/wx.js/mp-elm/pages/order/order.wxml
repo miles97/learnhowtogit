@@ -16,8 +16,8 @@
     </view>
     <!-- end of s1 -->
 
-    <!-- section two -->
-    <view class='info-data'>
+    <!-- section two 如何优化界面以及改变样式s-->
+    <view class='info-data' >
         <view class="clear">
             <view class='info-data-link' bindtap='gotobalance'>
                 <text class='big'>{{balance}}元</text>

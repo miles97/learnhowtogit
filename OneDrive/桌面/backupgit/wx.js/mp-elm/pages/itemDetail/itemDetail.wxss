@@ -205,6 +205,7 @@ food_description_sale_rating text{
     font-size:.7rem;
     color:#fff;
     font-weight: bold;
+    margin-left:18px;
 }
 .cart_num{
     width: 50%;

@@ -33,6 +33,16 @@ Component({
     hasUserInfo: false,
     geoinfoList:"请选择地址",
     shopname:"",
+        imgUrls: [
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551764753275&di=44c87dc13399e1b8399d88ad8d242839&imgtype=0&src=http%3A%2F%2Fimg1.mukewang.com%2F5b13add4000199b412740792.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551764753275&di=557998b10ee3b35d0bcdd378c594353e&imgtype=0&src=http%3A%2F%2Fpic36.photophoto.cn%2F20150713%2F0470102517447764_b.jpg',
+            'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=108828198,4240002958&fm=26&gp=0.jpg'
+        ],
+        indicatorDots: true,
+        autoplay: true,
+        circular: true,
+        interval: 5000,
+        duration: 1000,
   },
 
   /**
@@ -64,6 +74,7 @@ Component({
         userInfo: e.detail.userInfo,
         hasUserInfo: true
       })
+        console.log(e.detail.userInfo);
     },
     gotomap:function(){
       wx.navigateTo({
@@ -95,6 +106,7 @@ Component({
               userInfo: res.userInfo,
               hasUserInfo: true
             })
+            
           }
         })
       }

@@ -38,3 +38,9 @@ ec-canvas {
     text-align: center;
     margin-top: 20rpx;
 }
+text{
+    text-shadow:1px 1px 1px;
+    color:rgb(0, 0, 0);
+    font-size:32rpx;
+
+}

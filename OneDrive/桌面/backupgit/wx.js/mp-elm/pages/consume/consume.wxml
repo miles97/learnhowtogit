@@ -28,7 +28,7 @@
     </view>
     <view class='right-block-two'>
         <text>脂肪</text>
-        <view class='rating_num color-orange'>{{foodList.fat}}mg
+        <view class='rating_num color-orange'>{{foodList.fat}}g
         </view>
     </view>
 

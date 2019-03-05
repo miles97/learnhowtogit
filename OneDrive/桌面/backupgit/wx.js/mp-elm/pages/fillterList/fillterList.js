@@ -1,11 +1,11 @@
 import commonService from '../../utils/service/common.service.js';
-
 Page({
-
     data: {
-        searchList: [],
+        searchList: {},
         shopName: '',
         extromessage: "",
+        foodsList: {},
+        isHaveList: false, //未使用
     },
     shopNameInput: function(e) {
         this.setData({
@@ -23,30 +23,38 @@ Page({
             geohash: geohash,
             keyword: keyword,
         }
-
         commonService.getSearchList(data).then(res => {
             this.data.searchList = res
             let arr1 = []
             // res.forEach((item, index) => {
-            //     arr1.push(item.foods)
+            //     arr1.push(item)
             // })
-            if (data.success) {
-                console.log(arr1);
-                this.setData({
-                    searchList: res,
-                    foodsList: arr1,
-                })
-            } else {
-                console.log(res.message);
+            if (res.message) {
+                // console.log(res);
                 this.setData({
                     extromessage: res.message,
                 })
+            } else {
+                var searchList = this.data.searchList;
+                this.setData({
+                    searchList: res,
+                    foodsList: res,
+                    extromessage: null,
+                })
+                // console.log(searchList);
             }
+        })
 
+    },
+    gotoFiveStore: function(e) {
+        console.log(e);
+        var restaurant_id = e.currentTarget.dataset.value;
+        var shopname = e.currentTarget.dataset.name;
+        wx.setStorageSync("restaurant_id", restaurant_id);
+        wx.setStorageSync("shopname", shopname);
+        wx.navigateTo({
+            url: '../itemDetail/itemDetail',
         })
     },
-    onLoad: function(options) {
-
-    },
-
+    onLoad: function(options) {},
 })
