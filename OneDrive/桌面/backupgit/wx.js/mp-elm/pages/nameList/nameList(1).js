@@ -123,6 +123,7 @@ Component({
     }else{
         
     }
+    
     },
     init: function(){
       this.onLoad();

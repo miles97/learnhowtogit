@@ -1,4 +1,5 @@
 // pages/mine/mine.js
+import commonService from '../../utils/service/common.service.js';
 Component({
     /**
      * 组件的属性列表
@@ -12,6 +13,7 @@ Component({
      */
     data: {
         isHaveOrderList: false,
+        isHaveList:false,
         ratingScoresData:{
             "cho":150,
             "egg":22,
@@ -21,7 +23,8 @@ Component({
             "na":1100,
             "ca":70,
             "vc":60,
-        }
+        },
+        imgUrl: "https://elm.cangdu.org/img/",
     },
 
     /**
@@ -41,10 +44,30 @@ Component({
                 url: '../consume/consume',
             })
         },
+        getOrderList:function(){
+            let data = {
+                // restaurant_id: restaurant_id,
+                offset:0,
+                limit:20,
+            }
+            commonService.getOrderList(data).then(res => {
+                this.data.orderList = res
+               var orderList = this.data.orderList
+                // let arr1 = []
+                // res.forEach((item, index) => {
+                //     arr1.push(item.foods)
+                // })
+                this.setData({
+                    orderList: res,
+                    isHaveList:true,
+                })
+                console.log(orderList);
+            })
+        },
         onLoad:function(){
-
         },
         onShow:function(){
+            this.getOrderList();
             var isHaveOrderList = this.data.isHaveOrderList;
             if (isHaveOrderList) {
                 // let isHaveOrderList = wx.getStorageSync("isHaveOrderList");  频繁的取值拿值有点影响性能，先用！代替

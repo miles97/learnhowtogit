@@ -1,4 +1,4 @@
 module.exports = {
-  BASE_URL: 'http://elm.cangdu.org',
+  BASE_URL: 'https://elm.cangdu.org',
   IMAGE_PATH: 'https://elm.cangdu.org/img/',
 }

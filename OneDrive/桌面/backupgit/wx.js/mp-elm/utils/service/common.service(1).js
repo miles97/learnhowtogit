@@ -12,7 +12,10 @@ export default {
     getSearchList(params) {
         return HTTP.request(API.GET_SHOP_SEARCH, 'GET', params)
     },
-
+    //查询订单
+    getOrderList(params) {
+        return HTTP.request(API.GET_ORDER_LIST, 'GET', params)
+    },
     //根据小程序内置地图lacation 获取gaohash数值，根据geohash数值,通过接口 查询地址位置对应地址
 
     //根据店铺id查询店铺具体评分内容，获取评分信息

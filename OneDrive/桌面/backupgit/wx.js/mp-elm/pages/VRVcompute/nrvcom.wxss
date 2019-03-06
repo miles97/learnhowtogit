@@ -40,3 +40,8 @@
     vertical-align: middle;
     color: #fff;
 }
+.info-extro{
+    float: right;
+    margin-top: 20px;
+    
+}

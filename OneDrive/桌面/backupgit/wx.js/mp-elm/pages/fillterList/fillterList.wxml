@@ -2,28 +2,30 @@
 <view class='search_page'>
 
     <form class='search_form'>
-        <input type='search' name="search" placeholder="请输入商家或美食名称" class="search_input" bindinput='shopNameInput'></input>
+        <input type='search' name="search" placeholder="请输入想吃的东西" class="search_input" bindinput='shopNameInput'></input>
         <button type="submit" name="submit" class="search_submit" bindtap='gotosearch'>search</button>
     </form>
 
     <view wx:for="{{searchList}}" wx:key="value">
         <view class='single-shop-item' bindtap='gotoFiveStore' data-value="{{item.id}}" data-name="{{item.name}}">
             <view class='itself'>{{item.name}}</view>
-            <view class='more'>
-                <text>{{item.address}}</text>
+            
+                <image src='{{imgUrl+item.image_path}}' class="img"></image>
+                <view class='more'>
+                  <text>{{item.address}}</text>
                 <view>
                     <text>{{item.distance}}</text>
                 </view>
-
                 <view>
-                    <text>{{item.piecewise_agent_fee.tips}}</text>
+                    <text class='color-orange'>{{item.piecewise_agent_fee.tips}}</text>
                 </view>
             </view>
 
         </view>
-        <view wx:if="{{!item}}">抱歉，没找到喔</view>
+        
     </view>
-
-    <view wx:if="{{extromessage}}">{{extromessage}}</view>
+    <view wx:if="{{isHaveList}}" class='error-info'>抱歉five，系统没找到
+    <image src='../../images/ding.svg'></image></view>
+    <view wx:if="{{extromessage}}" class='error-info'>{{extromessage}}</view>
 
 </view>

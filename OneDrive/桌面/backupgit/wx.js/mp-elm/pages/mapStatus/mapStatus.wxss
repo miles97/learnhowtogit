@@ -27,8 +27,8 @@ button {
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 254px;
-    right: 10px;
+    top: 225px;
+    right: 25px;
     text-align: center;
 }
 .location_icon image{

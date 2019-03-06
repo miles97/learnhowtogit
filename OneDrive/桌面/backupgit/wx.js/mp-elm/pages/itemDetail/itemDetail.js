@@ -1,17 +1,5 @@
-// pages/itemDetail/itemDetail.js
 import commonService from '../../utils/service/common.service.js';
-
 Component({
-    /**
-     * 组件的属性列表
-     */
-    properties: {
-
-    },
-
-    /**
-     * 组件的初始数据
-     */
     data: {
         menuIndex: 0, //已选菜单索引值，默认为0
         itemChoose: true,

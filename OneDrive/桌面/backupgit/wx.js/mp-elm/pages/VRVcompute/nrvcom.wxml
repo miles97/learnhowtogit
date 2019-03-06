@@ -34,6 +34,7 @@
     <view class='input-section'>
         <input placeholder='钠含量(NRV)mg' bindinput='containInput5' value='{{inputValue}}'></input>
     </view>
+    <view class='info-extro color-orange font-3'>关于NVR说明</view>
     <view class='totalsum' bindtap='gotosum'>计算</view>
     <view class='totalsum2' bindtap='init'>重置</view>
 </view>

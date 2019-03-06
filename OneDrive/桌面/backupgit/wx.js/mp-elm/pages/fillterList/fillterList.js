@@ -6,6 +6,7 @@ Page({
         extromessage: "",
         foodsList: {},
         isHaveList: false, //未使用
+        imgUrl: "https://elm.cangdu.org/img/",
     },
     shopNameInput: function(e) {
         this.setData({
@@ -39,9 +40,15 @@ Page({
                 this.setData({
                     searchList: res,
                     foodsList: res,
-                    extromessage: null,
+                    extromessage: null, //重置提示数据，防止显示
+                    isHaveList: false,  //重置提示数据，防止显示
                 })
-                // console.log(searchList);
+                console.log(searchList);
+                if (searchList.length===0){
+                    this.setData({
+                        isHaveList:true,
+                    })
+                }
             }
         })
 
