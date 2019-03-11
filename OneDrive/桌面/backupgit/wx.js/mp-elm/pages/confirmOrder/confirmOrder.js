@@ -34,6 +34,7 @@ Component({
         },
         onShow: function() {
             let geoinfo = wx.getStorageSync("geoinfo");
+            console.log(geoinfo)
             if (geoinfo != null) {
                 var geoinfoList = this.data.geoinfoList;
                 geoinfoList = geoinfo.name;
@@ -41,8 +42,19 @@ Component({
                     geoinfoList: geoinfoList,
                 });
                 //   this.init();
-            } else {
-
+            };
+            if (!geoinfo) {
+                wx.showToast({
+                    title: '请先登录并定位',
+                    icon: "none",
+                    duration: 2000,
+                    image: '../../images/ding.svg'
+                }),
+                setTimeout(function(){
+                    wx.navigateTo({
+                        url: '../mapStatus/mapStatus',
+                    })
+                },2500)
             }
         },
         onLoad: function() {
@@ -54,6 +66,19 @@ Component({
                 shopitemList: shopitemList,
                 add: add,
             })
+            if (!geoinfo) {
+                wx.showToast({
+                    title: '请先登录并定位',
+                    icon: "none",
+                    duration: 2000,
+                    image: '../../images/ding.svg'
+                }),
+                    setTimeout(function () {
+                        wx.navigateTo({
+                            url: '../mapStatus/mapStatus',
+                        })
+                    }, 2500)
+            }
         }
     }
 })

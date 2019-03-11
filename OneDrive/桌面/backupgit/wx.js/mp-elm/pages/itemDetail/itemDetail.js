@@ -1,4 +1,5 @@
 import commonService from '../../utils/service/common.service.js';
+const app = getApp();
 Component({
     data: {
         menuIndex: 0, //已选菜单索引值，默认为0
@@ -26,11 +27,9 @@ Component({
         shopname: "",
         restaurant_id: 1,
         shopitemList: [],
+        userInfo: {},
     },
 
-    /**
-     * 组件的方法列表
-     */
     methods: {
         //显示商品列表
         changeshowitem: function() {
@@ -163,6 +162,17 @@ Component({
             })
             this.init();
             // this.showCartList();
+            var userInfo = this.data.userInfo;
+            wx.getUserInfo({
+                success: res => {
+                    app.globalData.userInfo = res.userInfo
+                    this.setData({
+                        userInfo: res.userInfo,
+                        hasUserInfo: true
+                    })
+                }
+            });
+
         },
         onShow: function() {
             let shopname = wx.getStorageSync("shopname");
@@ -170,6 +180,20 @@ Component({
                 shopname: shopname,
             })
             this.init();
+            var userInfo = this.data.userInfo;
+            if (userInfo === null) {
+                wx.showToast({
+                        title: '请先登录',
+                        icon: "none",
+                        duration: 2000,
+                        image: '../../images/ding.svg'
+                    }),
+                    setTimeout(function() {
+                        wx.navigateTo({
+                            url: '../nameList/nameList',
+                        })
+                    }, 2500)
+            }
         }
     }
 })

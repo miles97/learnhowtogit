@@ -17,7 +17,7 @@
     </view>
 
     <!-- 轮播头图 -->
-    <view class='majoy-head '>
+    <view class='majoy-head' bindtap='gotoRandom'>
         <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
             <block wx:for="{{imgUrls}}" wx:key="value">
                 <swiper-item>

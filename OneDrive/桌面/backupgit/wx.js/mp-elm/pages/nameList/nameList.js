@@ -54,6 +54,15 @@ Component({
         url: '../fillterList/fillterList',
       })
     },
+    gotoRandom:function(){
+        var restaurant_id = Math.floor(Math.random() * 10); 
+        //随机生成商店id,进入商店页面
+        console.log(restaurant_id);
+        wx.setStorageSync("restaurant_id", restaurant_id);
+        wx.navigateTo({
+            url: '../itemDetail/itemDetail',
+        })
+    },
     gotoShop:function(e){
     var shopname = e.target.dataset.id;
     console.log(e),
