@@ -106,6 +106,7 @@ Component({
             this.setData({
                 add: add,
             })
+            // console.log(e.currentTarget)
             let shopitem = e._relatedInfo.anchorRelatedText;
             var shopitemList = [];
             shopitemList.unshift(shopitem)
@@ -114,8 +115,8 @@ Component({
             })
             wx.setStorageSync("shopitemList", shopitemList);
             wx.setStorageSync("add", add);
-            console.log(shopitemList.unshift(shopitem));
-            console.log(shopitemList);
+            // console.log(shopitemList.unshift(shopitem));
+            // console.log(shopitemList);
         },
 
         gotopay() {

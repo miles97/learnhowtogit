@@ -3,7 +3,7 @@ Component({
 
     data: {
         hour: Math.floor(Math.random() * 24),
-        minute: Math.floor(Math.random() * 60),
+        minute: Math.floor(Math.random() * 60) < 10 ? 10 : Math.floor(Math.random() * 60),
         payway: "先欠着",
     },
 

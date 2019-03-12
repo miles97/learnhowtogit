@@ -17,7 +17,7 @@
     <view wx:else>确认位置</view>
     
     </view>
-    <view bindtap="moveToLocation" class="page-body-button">移动位置</view>
+    <view bindtap="getback" class="page-body-button">移动位置</view>
     <view></view>
   </view>
     <view bindtap="moveToLocation" class="location_icon">

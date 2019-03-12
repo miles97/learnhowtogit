@@ -17,4 +17,6 @@ export default {
     // https://elm.cangdu.org/bos/orders
 
     GET_SHOP_SEARCH: BASE_URL + "/v4/restaurants",
+
+
 }

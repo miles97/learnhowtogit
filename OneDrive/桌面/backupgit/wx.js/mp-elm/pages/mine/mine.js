@@ -1,16 +1,7 @@
 // pages/mine/mine.js
 import commonService from '../../utils/service/common.service.js';
 Component({
-    /**
-     * 组件的属性列表
-     */
-    properties: {
 
-    },
-
-    /**
-     * 组件的初始数据
-     */
     data: {
         isHaveOrderList: false,
         isHaveList:false,

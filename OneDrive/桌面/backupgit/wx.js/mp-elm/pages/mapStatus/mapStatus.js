@@ -1,3 +1,4 @@
+import commonService from '../../utils/service/common.service.js';
 Page({
     data: {
         latitude: 23.099994,
@@ -11,11 +12,9 @@ Page({
         covers: [{
             latitude: 23.099994,
             longitude: 113.344520,
-            
         }, {
             latitude: 23.099994,
             longitude: 113.304520,
-            
         }],
         msiteTitle: [],
     },
@@ -23,11 +22,11 @@ Page({
         this.mapCtx = wx.createMapContext('myMap');
         // this.moveToLocation();
     },
-    onPullDownRefresh: function () {
+    onPullDownRefresh: function() {
         // 显示顶部刷新图标
         wx.showNavigationBarLoading();
         this.onLoad();
-        setTimeout(function () {
+        setTimeout(function() {
             // 隐藏导航栏加载框
             wx.hideNavigationBarLoading();
             // 停止下拉动作
@@ -46,11 +45,26 @@ Page({
     moveToLocation: function() {
         this.mapCtx.moveToLocation();
     },
-    getback: function(params) {
+    getback: function() {
         let geohash = wx.getStorageSync("geohash");
+        console.log(geohash)
+        // let data = {
+        //     geohash: geohash,
+        // }
+
+        // commonService.getLocationList(data).then(res => {
+        //     var geoinfo = res; 
+        //     // console.log(geoinfo);
+        //     // var msiteTitle = this.data.msiteTitle;
+        //     // msiteTitle.name = res.data.name;
+        //     // this.setData({
+        //     //     msiteTitle: msiteTitle,
+        //     // })
+        //     wx.setStorageSync("geoinfo", geoinfo);
+        // })
         return new Promise((resolve, reject) => {
             return wx.request({
-                url: 'http://elm.cangdu.org/v2/pois/' + geohash,
+                url: 'https://elm.cangdu.org/v2/pois/' + geohash,
                 success(res) {
                     if (res.success == false) {
                         reject(res.data.msg)
