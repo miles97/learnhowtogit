@@ -1,6 +1,4 @@
-<web-view></web-view><!--pages/consume/consume.wxml-->
-
-<view wx:if="{{showList}}">
+<view wx:if="{{isHaveWeekOrderList}}">
   <!-- <view wx:for="{{foodList}}" wx:for-index="index" wx:key="index">
   {{item}}</view> 如果不能直接访问，用wx:for渲染-->
   <view class='color-white'>
@@ -41,6 +39,9 @@
   <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}" bind:init="echartInit"></ec-canvas>
   <view>
 </view>
-<view class='error-msg' wx:if="{{isHaveWeekOrderList}}">
+<view class='error-msg' wx:if="{{!isHaveWeekOrderList}}">
     <text class='font-3 '>阿欧，还没有本周数据喔。</text>
+</view>
+<view class='ghost-reco'>
+    
 </view>

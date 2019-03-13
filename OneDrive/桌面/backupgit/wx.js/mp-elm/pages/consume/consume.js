@@ -26,7 +26,7 @@ function initChart(canvas, width, height) {
             data: ['vt', '蛋白质', '碳水']
         },
         grid: {
-            left: 20,
+            left: 15,
             right: 20,
             bottom: 15,
             top: 40,
@@ -80,7 +80,8 @@ function initChart(canvas, width, height) {
                 stack: '总量',
                 label: {
                     normal: {
-                        show: true
+                        show: true,
+                        position: 'inside'
                     }
                 },
                 data: [120, 102, 141],
@@ -97,7 +98,7 @@ function initChart(canvas, width, height) {
                 label: {
                     normal: {
                         show: true,
-                        position: 'left'
+                        position: 'inside'
                     }
                 },
                 data: [300, 500, 700],
@@ -129,15 +130,18 @@ Page({
         ec: {
             onInit: initChart
         },
-        isHaveWeekOrderList: false,
+        isHaveWeekOrderList: true,
     },
     init: function() {
 
     },
     onShow: function() {
         five = [200,300,400]
+        //five数组通过二维数组的[arr][i]来设置取值。
         fivename = ['炸鸡块','大面条儿','麻辣烫']
         //在这里给five赋值，然后通过展示页面数据,fivename通过取出storage然后排进数组
+        //未来的实现方向还是set get storage，在confirmorder页面获取。实际上场景只有一餐的话可以通过对比相关标准来进行衡量，
+        //或者直接通过多点菜单来进行对比排列。
     },
     onReady() {
         setTimeout(function() {

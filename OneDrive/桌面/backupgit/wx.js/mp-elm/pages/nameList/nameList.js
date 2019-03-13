@@ -91,7 +91,8 @@ Component({
       })
     },
     onLoad: function () {
-
+        //通过已集成的函数来帮助判断缺少的物质，然后通过缺少的物质完成物质的补充，达到目标。
+        //
       if (app.globalData.userInfo) {
         this.setData({
           userInfo: app.globalData.userInfo,
