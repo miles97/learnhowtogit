@@ -10,7 +10,7 @@ export default {
     GET_LOCATION_LIST: BASE_URL + "/v2/pois",
     //  + geohash
 
-    GET_SHOP_RATING: BASE_URL + "/ugc/v2/restaurants/:restaurant_id/ratings/scores",
+    GET_SHOP_RATING: BASE_URL + "/ugc/v2/restaurants/ratings/scores",
     //https://elm.cangdu.org/ugc/v2/restaurants/1/ratings/scores
 
     GET_ORDER_LIST: BASE_URL + "/bos/orders",
@@ -18,5 +18,5 @@ export default {
 
     GET_SHOP_SEARCH: BASE_URL + "/v4/restaurants",
 
-
+    
 }

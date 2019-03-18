@@ -6,15 +6,6 @@ Component({
         itemChoose: true,
         showCartList: true,
         showScore: false,
-        shopDetailData: {
-            "rating": 5,
-            "damn": 40,
-        },
-        ratingScoresData: {
-            "service_score": 3,
-            "food_score": 3,
-            "order_lead_time": 20,
-        },
         itemDetail: {
             "intro": "真好恰，你吼辣么大声干嘛!",
             "exintro": "开业期间全场骨折"
@@ -28,6 +19,7 @@ Component({
         restaurant_id: 1,
         shopitemList: [],
         userInfo: {},
+        ratingDetail:{},
     },
 
     methods: {
@@ -133,6 +125,7 @@ Component({
         //初始化数据
         init: function() {
             this.getMenuList();
+            this.getRatingList();
         },
         //通过接口查询食品信息
         getMenuList: function() {
@@ -154,6 +147,33 @@ Component({
                     foodsList: arr1,
                 })
                 // console.log(arr1);
+            })
+        },
+        //通过接口查询店铺评价信息
+        getRatingList: function() {
+            let restaurant_id = wx.getStorageSync("restaurant_id");
+            var ratingDetail = this.data.ratingDetail;
+            return new Promise((resolve, reject) => {
+                return wx.request({
+                    url: 'https://elm.cangdu.org/ugc/v2/restaurants/' + restaurant_id +"/ratings/scores",
+                    success(res) {
+                        if (res.success == false) {
+                            reject(res.data.msg)
+                        } else {
+                            resolve(res.data);
+                            // ratingDetail = res.data;
+                            // console.log(res.data);
+                            this.setData({
+                                ratingDetail: res.data,
+                            })
+                            // wx.setStorageSync("ratingDetail", ratingDetail);
+                        }
+                    },
+                    fail(rejection) {
+                        showToast('系统开小差了，请稍后再试')
+                        reject(rejection);
+                    }
+                })
             })
         },
         onLoad: function() {

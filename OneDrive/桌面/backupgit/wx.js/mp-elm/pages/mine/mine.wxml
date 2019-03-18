@@ -87,7 +87,7 @@
                 <image src='{{imgUrl+item.restaurant_image_url}}' class='img'></image>
                 <view class='more'>
                 <view><text>{{item.status_bar.sub_title}}</text></view>
-                <view><text class='color-orange'>{{item.status_bar.title}}</text></view>
+                <view><text class='color-orange'>{{item.status_bar.title=="支付超时"?'支付完成':'支付未完成'}}</text></view>
                 </view>
             </view>
         </view>

@@ -14,7 +14,6 @@
             <view></view>
             <text class='font-3'>{{itemDetail.exintro}}</text>
         </view>
-
     </view>
 
     <!-- 商品/评价切换tap -->
@@ -130,23 +129,23 @@
     <view class='rating_container' wx:if="{{showScore}}">
         <view class="rating_head">
             <text class='font-3'>综合评价:</text>
-            <text class='font-3 color-orange'>{{shopDetailData.rating}}</text>
+            <text class='font-3 color-orange'>{{ratingDetail.overall_score}}</text>
             <view></view>
             <text class='font-3'>高于周边商家:</text>
-            <text class='font-3 color-orange'>{{shopDetailData.damn}}%</text>
+            <text class='font-3 color-orange'>{{ratingDetail.compare_rating}}%</text>
         </view>
         <view class='rating_header_right'>
             <view class='right-block'>
                 <text>服务态度:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.service_score}}</view>
+                <view class='rating_num color-orange'>{{ratingDetail.service_score}}</view>
             </view>
             <view class='right-block'>
                 <text>菜品评价:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.food_score}}</view>
+                <view class='rating_num color-orange'>{{ratingDetail.food_score}}</view>
             </view>
             <view class='right-block'>
                 <text>送达时间:</text>
-                <view class='rating_num color-orange'>{{ratingScoresData.order_lead_time}}
+                <view class='rating_num color-orange'>{{ratingDetail.deliver_time}}
                     <text>分钟</text>
                 </view>
             </view>
