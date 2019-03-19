@@ -5,7 +5,6 @@
     <!-- 头部商家详情页 -->
     <view class='detail-top'>
         <!--image  -->
-
         <view class='font-first'>
             <text class='font-2'>{{shopname}}</text>
         </view>
@@ -127,15 +126,22 @@
 
     <!-- 评分score页面 -->
     <view class='rating_container' wx:if="{{showScore}}">
-        <view class="rating_head">
+        <!-- error message错误信息处理 -->
+        <view wx:if="{{ratingDetail.status==0}}">
+            <text class='font-2'>{{ratingDetail.message}}</text>
+            
+        </view>
+
+        <!-- 正常返回 -->
+        <view class="rating_head" wx:else>
             <text class='font-3'>综合评价:</text>
             <text class='font-3 color-orange'>{{ratingDetail.overall_score}}</text>
             <view></view>
             <text class='font-3'>高于周边商家:</text>
             <text class='font-3 color-orange'>{{ratingDetail.compare_rating}}%</text>
         </view>
-        <view class='rating_header_right'>
-            <view class='right-block'>
+        <view class='rating_header_right' wx:if="{{ratingDetail.status!=0}}">
+            <view class='right-block' >
                 <text>服务态度:</text>
                 <view class='rating_num color-orange'>{{ratingDetail.service_score}}</view>
             </view>

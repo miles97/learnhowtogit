@@ -40,6 +40,7 @@ Component({
                 showScore: true,
                 itemChoose: false,
             })
+            this.onShow();
         },
         chooseMenu: function(e) {
             var index = e.currentTarget.dataset.id;
@@ -130,11 +131,9 @@ Component({
         //通过接口查询食品信息
         getMenuList: function() {
             let restaurant_id = wx.getStorageSync("restaurant_id");
-
             let data = {
                 restaurant_id: restaurant_id,
             }
-
             commonService.getMenuList(data).then(res => {
                 this.data.menuList = res
                 // foodsList = this.data.foodsList
@@ -150,23 +149,22 @@ Component({
             })
         },
         //通过接口查询店铺评价信息
+        //promise中不能setData，所以每次都需要setStorage，然后this.onShow方法重新获取storage?
         getRatingList: function() {
             let restaurant_id = wx.getStorageSync("restaurant_id");
             var ratingDetail = this.data.ratingDetail;
             return new Promise((resolve, reject) => {
                 return wx.request({
                     url: 'https://elm.cangdu.org/ugc/v2/restaurants/' + restaurant_id +"/ratings/scores",
+                    //实在没办法了，动态绑定的域名不是很会的喂
                     success(res) {
                         if (res.success == false) {
                             reject(res.data.msg)
                         } else {
                             resolve(res.data);
-                            // ratingDetail = res.data;
-                            // console.log(res.data);
-                            this.setData({
-                                ratingDetail: res.data,
-                            })
-                            // wx.setStorageSync("ratingDetail", ratingDetail);
+                            ratingDetail = res.data;
+                            // console.log(ratingDetail);
+                            wx.setStorageSync("ratingDetail", ratingDetail);
                         }
                     },
                     fail(rejection) {
@@ -174,6 +172,9 @@ Component({
                         reject(rejection);
                     }
                 })
+            })
+            this.setData({
+                ratingDetail: ratingDetail,
             })
         },
         onLoad: function() {
@@ -196,9 +197,11 @@ Component({
 
         },
         onShow: function() {
+            let ratingDetail = wx.getStorageSync("ratingDetail");
             let shopname = wx.getStorageSync("shopname");
             this.setData({
                 shopname: shopname,
+                ratingDetail: ratingDetail,
             })
             this.init();
             var userInfo = this.data.userInfo;
