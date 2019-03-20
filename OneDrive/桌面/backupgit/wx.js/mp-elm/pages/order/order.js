@@ -3,9 +3,9 @@ Component({
     data: {
         username: "登录/注册",
         mobile: "请绑定手机号",
-        balance: "0.00",
+        balance: "0",
         count: "3",
-        pointNumber: "0",
+        pointNumber: "5",
         userInfo: {},
     },
     methods: {
@@ -29,17 +29,17 @@ Component({
                 url: '../help/help',
             })
         },
-        gotoCOP: function(){
+        gotoCOP: function() {
             wx.navigateTo({
                 url: '../VRVcompute/nrvcom',
             })
         },
-        //为了在getuserinfo之前点击我的获取不到用户信息的问题
+        //下拉更新为了在getuserinfo之前点击我的获取不到用户信息的问题
         onPullDownRefresh: function() {
             // 显示顶部刷新图标
             wx.showNavigationBarLoading();
             this.onLoad();
-        setTimeout(function() {
+            setTimeout(function() {
                 // 隐藏导航栏加载框
                 wx.hideNavigationBarLoading();
                 // 停止下拉动作

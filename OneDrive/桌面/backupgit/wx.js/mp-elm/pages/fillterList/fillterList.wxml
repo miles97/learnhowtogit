@@ -14,7 +14,7 @@
                 <view class='more'>
                   <text>{{item.address}}</text>
                 <view>
-                    <text>{{item.distance}}</text>
+                    <text>距离我：{{item.distance}}</text>
                 </view>
                 <view>
                     <text class='color-orange'>{{item.piecewise_agent_fee.tips}}</text>

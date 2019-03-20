@@ -77,7 +77,9 @@
 
 </view>
 <view class='error-msg' wx:if="{{isHaveOrderList}}">
-    <view class='' wx:if="{{!isHaveList}}"><text class='font-3 '>抱歉，还没有订单数据喔。</text></view>
+    <view class='' wx:if="{{!isHaveList}}">
+        <text class='font-3 '>抱歉，还没有订单数据喔。</text>
+    </view>
     <!-- 订单渲染列表 -->
 
     <view wx:if="{{isHaveList}}">
@@ -86,8 +88,12 @@
                 <view class='itself'>{{item.restaurant_name}}</view>
                 <image src='{{imgUrl+item.restaurant_image_url}}' class='img'></image>
                 <view class='more'>
-                <view><text>{{item.status_bar.sub_title}}</text></view>
-                <view><text class='color-orange'>{{item.status_bar.title=="支付超时"?'支付完成':'支付未完成'}}</text></view>
+                    <view>
+                        <text>{{item.status_bar.sub_title}}</text>
+                    </view>
+                    <view>
+                        <text class='color-orange'>{{item.status_bar.title=="支付超时"?'支付完成':'支付未完成'}}</text>
+                    </view>
                 </view>
             </view>
         </view>

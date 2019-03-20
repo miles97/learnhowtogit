@@ -20,16 +20,16 @@
     <view class='info-data' >
         <view class="clear">
             <view class='info-data-link' bindtap='gotobalance'>
-                <text class='big'>{{balance}}元</text>
-                <text class='color-black'>我的余额</text>
+                <text class='big'>{{balance}}个</text>
+                <text class='color-black'>未发货</text>
             </view>
             <view class='info-data-link' bindtap='gotobenefit'>
                 <text class='big'>{{count}}个</text>
-                <text class='color-black'>我的优惠</text>
+                <text class='color-black'>待收货</text>
             </view>
             <view class='info-data-link' bindtap='gotopoints'>
-                <text class='big'>{{pointNumber}}分</text>
-                <text class='color-black'>我的积分</text>
+                <text class='big'>{{pointNumber}}个</text>
+                <text class='color-black'>待评价</text>
             </view>
         </view>
 

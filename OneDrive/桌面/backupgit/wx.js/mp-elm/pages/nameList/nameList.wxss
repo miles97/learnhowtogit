@@ -64,12 +64,21 @@ button {
     color: #000;
 }
 
+.shop-list-copy {
+    /* height: 400rpx; */
+    width: 100%;
+    color: #000;
+    overflow: hidden;
+    margin-top: 8px;
+    margin-bottom: 9px;
+}
+
 .imgCut {
     width: 100rpx;
     height: 100rpx;
     /* display: inline-block; */
     float: left;
-    text-align:center;
+    text-align: center;
     vertical-align: middle;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -85,8 +94,7 @@ button {
     height: 40px;
     width: 65%;
     padding: 0 0 10px 10px;
-    /* vertical-align: middle; */
-    /* line-height: 40px; */
+    /* vertical-align: middle; *//* line-height: 40px; */
     float: left;
 }
 
@@ -98,13 +106,31 @@ button {
 .single-shop-item {
     width: auto;
     height: 35%;
-    margin-top:10px;
+    margin-top: 10px;
 }
-.font-set{
+
+.font-set {
     color: #ccc;
-}  
-.font-roand{
+}
+
+.font-roand {
     font-weight: 900;
 }
-.swiper{width: 100%;height: 200px}
-.slide-image{width: 100%;height: 100%}
+
+.swiper {
+    width: 100%;
+    height: 200px;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+}
+
+.damy {
+    margin-top: 10px;
+}
+
+.duration {
+    margin-top: 16px;
+}

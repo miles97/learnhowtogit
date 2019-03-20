@@ -20,7 +20,11 @@ export default {
     getLocationList(params) {
         return HTTP.request(API.GET_LOCATION_LIST, 'GET', params)
     },
-    //根据小程序内置地图lacation 获取gaohash数值，根据geohash数值,通过接口 查询地址位置对应地址
+
+    getShopLong(params){
+        return HTTP.request(API.GET_SHOP_LONG, 'GET' ,params)
+    },
+    //根据小程序内置地图location 获取gaohash数值，根据geohash数值,通过接口 查询地址位置对应地址
 
     // getShopRating(params){
     //     return HTTP.request(API.GET_SHOP_RATING, 'GET', params)

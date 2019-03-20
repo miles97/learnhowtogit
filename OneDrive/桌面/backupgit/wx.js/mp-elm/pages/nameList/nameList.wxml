@@ -26,7 +26,9 @@
             </block>
         </swiper>
     </view>
-
+    <view class='duration color-bg-blue color-white'>
+        <text class='font-2'>平台推荐</text>
+    </view>
     <!-- 附近商家列表 -->
     <view class='shop-list' wx:if="{{true}}">
         <view class='single-shop-item border-bottom-ccc' wx:for="{{nameList.what}}" wx:for-index="index" wx:key="index" bindtap='gotoShop'>
@@ -43,11 +45,25 @@
         </view>
         <!-- <text>aaa</text> -->
     </view>
-
-
-
-
-
-
-
+    <view class='duration color-bg-blue color-white'>
+        <text class='font-2'>周边热门</text>
+    </view>
+    <view class='damy'>
+        <!-- 接口渲染列表附近商家 -->
+        <view class='shop-list-copy' wx:for="{{shopLong}}" wx:key="index" wx:for-index="index">
+            <view class='single-shop-item border-bottom-ccc' wx:show="{{index>=5}}" bindtap='gotoShop'>
+                <view class='imgCut'>
+                    <image src="{{imgUrl+item.image_path}}"></image>
+                </view>
+                <view class='itself'>
+                    <view class='font-2 font-roand' data-id="{{item.name}}" data-value="{{index}}">{{item.name}}</view>
+                    <view class='more'>
+                        <text class='font-4 color-black'>距离:{{item.distance}}</text>
+                        <text class='font-4 color-black'>配送时间:{{item.order_lead_time}}</text>
+                        <text class='font-4 color-black'>{{item.piecewise_agent_fee.tips}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>

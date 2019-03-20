@@ -18,5 +18,7 @@ export default {
 
     GET_SHOP_SEARCH: BASE_URL + "/v4/restaurants",
 
+    GET_SHOP_LONG: BASE_URL + "/shopping/restaurants",
     
+    //https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762"
 }

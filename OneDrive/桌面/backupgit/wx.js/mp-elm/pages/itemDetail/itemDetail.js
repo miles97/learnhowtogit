@@ -61,21 +61,6 @@ Component({
         },
         //minus数量
         minusCount(e) {
-            // const index = e.currentTarget.dataset.index;
-            // let foodsList = this.data.foodsList;
-            // let arr3 = [];
-            // foodsList.forEach((item, index) => {
-            //     arr3.push(item.forEach((item, index) => {
-            //         arr3.push(item.is_featured)
-            //     }))
-            // })
-            // let num = arr3[index];
-            // num = num++;
-            // arr3[index] = num;
-            // this.setData({
-            //     foodsList: foodsList,
-            // });
-            // this.getTotalPrice();
             const index = e.currentTarget.dataset.index;
             let add = this.data.add;
             let num = add[index];
