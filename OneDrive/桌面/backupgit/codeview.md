@@ -1,4 +1,4 @@
-#### 代码规范笔记
+﻿#### 代码规范笔记
 
 ### html向
 项目的命名方式大概偏向于   vehicle_nav_first,包括css的命名方式
@@ -100,5 +100,5 @@ webstorm
 
 后端直接用现成的node构建，展示数据用echarts
 
-数据库直接用mongodb
+数据库直接用mongodb+++
 
