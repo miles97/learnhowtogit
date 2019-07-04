@@ -1,5 +1,5 @@
-### 国人自律套餐
+### 閲嶇疆椤圭洰浠ュ強缁冩墜demo锛屽舰鎴愰�昏緫鎴愰暱浣撶郴浠ュ強浼樺寲椤圭洰鐩綍缁撴瀯
 
-1.  daily git push 
+1.  by the end of september this year 2019
 
-2.  回顾一些基本的简单js语法以及处理操作，之后在进行一些深入的研究和内容解析
+2.  
